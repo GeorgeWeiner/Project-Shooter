@@ -11,6 +11,7 @@ namespace Movement
         [SerializeField] private float jumpForce = 10f;
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private float distanceToGround;
+        [SerializeField] private float maxDistanceGroundInfo;
 
         private Rigidbody _rb;
         private CapsuleCollider _col;
@@ -35,9 +36,10 @@ namespace Movement
 
         private void MovePlayer()
         {
-            var movementDirection = _playerLook.transform.forward * PlayerInput.Instance.PlayerInputY() + _playerLook.transform.right * PlayerInput.Instance.PlayerInputX();
+            var movementDirectionHorizontal = _playerLook.transform.forward * PlayerInput.Instance.PlayerInputY() + _playerLook.transform.right * PlayerInput.Instance.PlayerInputX();
+            var slopeMovementDirection = Vector3.ProjectOnPlane(movementDirectionHorizontal, GroundInfo().normal);
 
-            _rb.AddForce(movementDirection.normalized * movementSpeed * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
+            _rb.AddForce(slopeMovementDirection.normalized * movementSpeed * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
         }
 
         private void Jump()
@@ -63,6 +65,14 @@ namespace Movement
 
             return Physics.CheckCapsule(bounds.center, capsuleBottom, distanceToGround, groundLayer,
                 QueryTriggerInteraction.Ignore);
+        }
+
+        private RaycastHit GroundInfo()
+        {
+            var myTransform = transform;
+            Physics.Raycast(myTransform.position, -myTransform.up, out RaycastHit hit, maxDistanceGroundInfo,
+                groundLayer, QueryTriggerInteraction.Ignore);
+            return hit;
         }
     }
 }

@@ -1,3 +1,4 @@
+using Inputs;
 using UnityEngine;
 
 namespace Weapons
@@ -10,12 +11,11 @@ namespace Weapons
         }
         protected override void Shoot()
         {
-            if (Input.GetMouseButton(0) && canShoot)
+            if (PlayerInput.Instance.PlayerShoot() && canShoot)
             {
                 currentAmmo -= 1;
                 base.Shoot();
             }
-       
         }
     }
 }
