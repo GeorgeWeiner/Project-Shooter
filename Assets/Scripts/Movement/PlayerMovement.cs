@@ -10,6 +10,7 @@ namespace Movement
         [SerializeField] private float jumpForce = 10f;
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private float distanceToGround;
+        [SerializeField] private Transform orientation;
      
         private Rigidbody _rb;
         private CapsuleCollider _col;
@@ -17,6 +18,7 @@ namespace Movement
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();
+            _col = GetComponent<CapsuleCollider>();
         }
 
         private void Update()
@@ -31,10 +33,10 @@ namespace Movement
 
         private void MovePlayer()
         {
-            var movementDirection = new Vector3(movementSpeed * PlayerInput.Instance.PlayerInputX(), 0f,
-                movementSpeed * PlayerInput.Instance.PlayerInputY());
+            var movementDirection = orientation.forward * PlayerInput.Instance.PlayerInputY() +
+                                    orientation.right * PlayerInput.Instance.PlayerInputX();
 
-            _rb.AddForce(movementDirection, ForceMode.Force);
+            _rb.AddForce(movementDirection.normalized * movementSpeed, ForceMode.Acceleration);
         }
 
         private void Jump()
@@ -56,7 +58,7 @@ namespace Movement
         private bool IsGrounded()
         {
             var bounds = _col.bounds;
-            Vector3 capsuleBottom = new Vector3(bounds.center.x, bounds.min.y, bounds.center.z);
+            var capsuleBottom = new Vector3(bounds.center.x, bounds.min.y, bounds.center.z);
 
             return Physics.CheckCapsule(bounds.center, capsuleBottom, distanceToGround, groundLayer,
                 QueryTriggerInteraction.Ignore);
