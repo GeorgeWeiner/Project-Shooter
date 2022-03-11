@@ -1,3 +1,4 @@
+using Cinemachine;
 using Inputs;
 using UnityEngine;
 
@@ -11,14 +12,17 @@ namespace Movement
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private float distanceToGround;
         [SerializeField] private Transform orientation;
+        [SerializeField] private CinemachineVirtualCamera virtualCamera;
      
         private Rigidbody _rb;
         private CapsuleCollider _col;
+        private PlayerLook _playerLook;
 
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();
             _col = GetComponent<CapsuleCollider>();
+            _playerLook = GetComponentInChildren<PlayerLook>();
         }
 
         private void Update()
@@ -33,10 +37,9 @@ namespace Movement
 
         private void MovePlayer()
         {
-            var movementDirection = orientation.forward * PlayerInput.Instance.PlayerInputY() +
-                                    orientation.right * PlayerInput.Instance.PlayerInputX();
+            var movementDirection = _playerLook.transform.forward * PlayerInput.Instance.PlayerInputY() + _playerLook.transform.right * PlayerInput.Instance.PlayerInputX();
 
-            _rb.AddForce(movementDirection.normalized * movementSpeed, ForceMode.Acceleration);
+            _rb.AddForce(movementDirection.normalized * movementSpeed * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
         }
 
         private void Jump()
