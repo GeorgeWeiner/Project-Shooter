@@ -11,9 +11,7 @@ namespace Movement
         [SerializeField] private float jumpForce = 10f;
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private float distanceToGround;
-        [SerializeField] private Transform orientation;
-        [SerializeField] private CinemachineVirtualCamera virtualCamera;
-     
+
         private Rigidbody _rb;
         private CapsuleCollider _col;
         private PlayerLook _playerLook;

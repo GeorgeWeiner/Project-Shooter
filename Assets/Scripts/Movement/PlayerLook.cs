@@ -27,8 +27,10 @@ namespace Movement
             _xRotation -= PlayerInput.Instance.PlayerMouseInputX() * sensY * Multiplier * Time.deltaTime;
             _yRotation += PlayerInput.Instance.PlayerMouseInputY() * sensX * Multiplier * Time.deltaTime;
 
-            _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+            _xRotation = Mathf.Clamp(_xRotation, -85f, 85f);
             cam.rotation = Quaternion.Euler(_xRotation, _yRotation, 0f);
+
+            PlayerInput.Instance.playerForward = cam.eulerAngles;
         }
     }
 }
