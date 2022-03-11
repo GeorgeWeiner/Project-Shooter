@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotgunPistol : WeaponBaseScript
+namespace Weapons
 {
-    private void Update()
+    public class ShotgunPistol : Weapon
     {
-        ShootCurrentWeapon();
-    }
-    protected override void ShootCurrentWeapon()
-    {
-        if (Input.GetMouseButton(0) && canShoot)
+        private void Update()
         {
-            currentAmmo -= 1;
-            base.ShootCurrentWeapon();
+            Shoot();
         }
+        protected override void Shoot()
+        {
+            if (Input.GetMouseButton(0) && canShoot)
+            {
+                currentAmmo -= 1;
+                base.Shoot();
+            }
        
+        }
     }
 }
