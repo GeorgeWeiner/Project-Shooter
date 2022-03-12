@@ -14,6 +14,7 @@ namespace Inputs
         public bool PlayerJump() => Input.GetKeyDown(KeyCode.Space);
         public bool PlayerShoot() => Input.GetMouseButton(0);
         public bool PlayerInteract() => Input.GetKeyDown(KeyCode.E);
+        public bool PlayerSprint() => Input.GetKey(KeyCode.LeftShift);
         
         public Vector3 playerForward;
 

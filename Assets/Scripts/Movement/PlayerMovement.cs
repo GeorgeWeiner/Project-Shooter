@@ -7,11 +7,12 @@ namespace Movement
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] private float movementSpeed = 5f;
+        [SerializeField] private float walkSpeed, sprintSpeed;
         [SerializeField] private float jumpForce = 10f;
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private float distanceToGround;
         [SerializeField] private float maxDistanceGroundInfo;
+        [SerializeField] private float gravityStrength;
 
         private Rigidbody _rb;
         private CapsuleCollider _col;
@@ -39,15 +40,31 @@ namespace Movement
             var movementDirectionHorizontal = _playerLook.transform.forward * PlayerInput.Instance.PlayerInputY() + _playerLook.transform.right * PlayerInput.Instance.PlayerInputX();
             var slopeMovementDirection = Vector3.ProjectOnPlane(movementDirectionHorizontal, GroundInfo().normal);
 
-            _rb.AddForce(slopeMovementDirection.normalized * movementSpeed * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
+            _rb.AddForce(slopeMovementDirection.normalized * MovementSpeed() * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
+            _rb.AddForce(-slopeMovementDirection.normalized * (MovementSpeed() * 0.75f) * Time.fixedDeltaTime * 100f,
+                ForceMode.Acceleration);
         }
 
         private void Jump()
         {
             if (IsGrounded() && PlayerInput.Instance.PlayerJump())
             {
+                var velocity = _rb.velocity;
+                velocity = new Vector3(velocity.x, 0f, velocity.z);
+                
+                _rb.velocity = velocity;
                 _rb.AddForce(0f, jumpForce, 0f);
             }
+            
+            else if (!IsGrounded())
+            {
+                _rb.AddForce(0f, -gravityStrength, 0f);
+            }
+        }
+
+        private float MovementSpeed()
+        {
+            return PlayerInput.Instance.PlayerSprint() ? sprintSpeed : walkSpeed;
         }
 
         private void Interact()
@@ -70,7 +87,7 @@ namespace Movement
         private RaycastHit GroundInfo()
         {
             var myTransform = transform;
-            Physics.Raycast(myTransform.position, -myTransform.up, out RaycastHit hit, maxDistanceGroundInfo,
+            Physics.Raycast(myTransform.position, -myTransform.up, out var hit, maxDistanceGroundInfo,
                 groundLayer, QueryTriggerInteraction.Ignore);
             return hit;
         }
