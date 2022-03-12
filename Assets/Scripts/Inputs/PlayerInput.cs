@@ -5,29 +5,31 @@ namespace Inputs
 {
     public class PlayerInput : MonoBehaviour
     {
-        private static PlayerInput _instance;
-        public static PlayerInput Instance => _instance;
-        public float PlayerInputX() => Input.GetAxisRaw("Horizontal");
-        public float PlayerInputY() => Input.GetAxisRaw("Vertical");
-        public float PlayerMouseInputX() => Input.GetAxisRaw("Mouse Y");
-        public float PlayerMouseInputY() => Input.GetAxisRaw("Mouse X");
-        public bool PlayerJump() => Input.GetKeyDown(KeyCode.Space);
-        public bool PlayerShoot() => Input.GetMouseButton(0);
-        public bool PlayerReload() => Input.GetKeyDown(KeyCode.R);
-        public bool PlayerInteract() => Input.GetKeyDown(KeyCode.E);
-        public bool PlayerSprint() => Input.GetKey(KeyCode.LeftShift);
+        public static PlayerInput Instance { get; private set; }
+
+#if ENABLE_LEGACY_INPUT_MANAGER
+        public static float InputX() => Input.GetAxisRaw("Horizontal");
+        public static float InputY() => Input.GetAxisRaw("Vertical");
+        public static float MouseInputX() => Input.GetAxisRaw("Mouse Y");
+        public static float MouseInputY() => Input.GetAxisRaw("Mouse X");
+        public static bool Jump() => Input.GetKeyDown(KeyCode.Space);
+        public static bool Shoot() => Input.GetMouseButton(0);
+        public static bool Reload() => Input.GetKeyDown(KeyCode.R);
+        public static bool Interact() => Input.GetKeyDown(KeyCode.E);
+        public static bool Sprint() => Input.GetKey(KeyCode.LeftShift);
+#endif        
         
         public Vector3 playerForward;
 
         private void Awake()
         {
-            if (_instance != null && _instance != this)
+            if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
             } 
             else 
             {
-                _instance = this;
+                Instance = this;
             }
         }
     }

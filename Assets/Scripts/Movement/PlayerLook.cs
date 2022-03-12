@@ -24,8 +24,8 @@ namespace Movement
 
         private void LookAround()
         {
-            _xRotation -= PlayerInput.Instance.PlayerMouseInputX() * sensY * Multiplier * Time.deltaTime;
-            _yRotation += PlayerInput.Instance.PlayerMouseInputY() * sensX * Multiplier * Time.deltaTime;
+            _xRotation -= PlayerInput.MouseInputX() * sensY * Multiplier * Time.deltaTime;
+            _yRotation += PlayerInput.MouseInputY() * sensX * Multiplier * Time.deltaTime;
 
             _xRotation = Mathf.Clamp(_xRotation, -85f, 85f);
             cam.rotation = Quaternion.Euler(_xRotation, _yRotation, 0f);

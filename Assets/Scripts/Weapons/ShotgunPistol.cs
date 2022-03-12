@@ -11,7 +11,7 @@ namespace Weapons
         }
         protected override void Shoot()
         {
-            if (PlayerInput.Instance.PlayerShoot() && canShoot)
+            if (PlayerInput.Shoot() && canShoot)
             {
                 currentAmmo -= 1;
                 base.Shoot();

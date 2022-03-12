@@ -37,7 +37,7 @@ namespace Movement
 
         private void MovePlayer()
         {
-            var movementDirectionHorizontal = _playerLook.transform.forward * PlayerInput.Instance.PlayerInputY() + _playerLook.transform.right * PlayerInput.Instance.PlayerInputX();
+            var movementDirectionHorizontal = _playerLook.transform.forward * PlayerInput.InputY() + _playerLook.transform.right * PlayerInput.InputX();
             var slopeMovementDirection = Vector3.ProjectOnPlane(movementDirectionHorizontal, GroundInfo().normal);
 
             _rb.AddForce(slopeMovementDirection.normalized * MovementSpeed() * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
@@ -46,7 +46,7 @@ namespace Movement
 
         private void Jump()
         {
-            if (IsGrounded() && PlayerInput.Instance.PlayerJump())
+            if (IsGrounded() && PlayerInput.Jump())
             {
                 var velocity = _rb.velocity;
                 velocity = new Vector3(velocity.x, 0f, velocity.z);
@@ -63,12 +63,12 @@ namespace Movement
 
         private float MovementSpeed()
         {
-            return PlayerInput.Instance.PlayerSprint() ? sprintSpeed : walkSpeed;
+            return PlayerInput.Sprint() ? sprintSpeed : walkSpeed;
         }
 
         private void Interact()
         {
-            if (PlayerInput.Instance.PlayerInteract())
+            if (PlayerInput.Interact())
             {
                 //Do thing to pick up props and stuff.
             }
@@ -88,6 +88,7 @@ namespace Movement
             var myTransform = transform;
             Physics.Raycast(myTransform.position, -myTransform.up, out var hit, maxDistanceGroundInfo,
                 groundLayer, QueryTriggerInteraction.Ignore);
+            
             return hit;
         }
     }
