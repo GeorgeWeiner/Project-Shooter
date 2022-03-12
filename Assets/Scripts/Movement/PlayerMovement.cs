@@ -41,8 +41,7 @@ namespace Movement
             var slopeMovementDirection = Vector3.ProjectOnPlane(movementDirectionHorizontal, GroundInfo().normal);
 
             _rb.AddForce(slopeMovementDirection.normalized * MovementSpeed() * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
-            _rb.AddForce(-slopeMovementDirection.normalized * (MovementSpeed() * 0.75f) * Time.fixedDeltaTime * 100f,
-                ForceMode.Acceleration);
+            _rb.AddForce(-slopeMovementDirection.normalized * (MovementSpeed() * 0.75f) * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
         }
 
         private void Jump()
