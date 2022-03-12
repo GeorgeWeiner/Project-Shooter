@@ -37,11 +37,11 @@ namespace Movement
 
         private void MovePlayer()
         {
-            var movementDirectionHorizontal = _playerLook.transform.forward * PlayerInput.InputY() + _playerLook.transform.right * PlayerInput.InputX();
-            var slopeMovementDirection = Vector3.ProjectOnPlane(movementDirectionHorizontal, GroundInfo().normal);
+            var directionHorizontal = _playerLook.transform.forward * PlayerInput.InputY() + _playerLook.transform.right * PlayerInput.InputX();
+            var projectOnPlane = Vector3.ProjectOnPlane(directionHorizontal, GroundInfo().normal);
 
-            _rb.AddForce(slopeMovementDirection.normalized * MovementSpeed() * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
-            _rb.AddForce(-slopeMovementDirection.normalized * (MovementSpeed() * 0.75f) * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
+            _rb.AddForce(projectOnPlane.normalized * MovementSpeed() * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
+            _rb.AddForce(-projectOnPlane.normalized * (MovementSpeed() * 0.75f) * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
         }
 
         private void Jump()
