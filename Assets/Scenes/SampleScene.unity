@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5465926, g: 0.3560948, b: 0.31936786, a: 1}
+  m_IndirectSpecularColor: {r: 0.5464424, g: 0.3561778, b: 0.3199468, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5822,7 +5822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477703, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_Drag
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477703, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_Interpolate
@@ -5834,15 +5834,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: jumpForce
-      value: 1400
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: walkSpeed
-      value: 80
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: sprintSpeed
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: movementSpeed
@@ -5850,7 +5850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: gravityStrength
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: distanceToGround

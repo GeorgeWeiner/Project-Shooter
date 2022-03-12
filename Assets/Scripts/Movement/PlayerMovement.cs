@@ -53,12 +53,12 @@ namespace Movement
                 velocity = new Vector3(velocity.x, 0f, velocity.z);
                 
                 _rb.velocity = velocity;
-                _rb.AddForce(0f, jumpForce, 0f);
+                _rb.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
             }
             
             else if (!IsGrounded())
             {
-                _rb.AddForce(0f, -gravityStrength, 0f);
+                _rb.AddForce(0f, -gravityStrength, 0f, ForceMode.Acceleration);
             }
         }
 
