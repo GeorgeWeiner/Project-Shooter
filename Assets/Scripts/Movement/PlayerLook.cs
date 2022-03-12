@@ -30,7 +30,7 @@ namespace Movement
             _xRotation = Mathf.Clamp(_xRotation, -85f, 85f);
             cam.rotation = Quaternion.Euler(_xRotation, _yRotation, 0f);
 
-            PlayerInput.Instance.playerForward = cam.eulerAngles;
+            PlayerInput.playerForward = cam.eulerAngles;
         }
     }
 }

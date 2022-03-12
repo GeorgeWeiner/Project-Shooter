@@ -19,7 +19,7 @@ namespace Inputs
         public static bool Sprint() => Input.GetKey(KeyCode.LeftShift);
 #endif        
         
-        public Vector3 playerForward;
+        public static Vector3 playerForward;
 
         private void Awake()
         {
