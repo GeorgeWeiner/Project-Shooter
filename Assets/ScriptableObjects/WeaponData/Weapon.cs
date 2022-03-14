@@ -8,19 +8,19 @@ public abstract class Weapon : ScriptableObject
     public AudioClip WeaponSound { get { return weaponSound; } }
     [SerializeField] AudioClip reloadSound;
     public AudioClip ReloadSound { get { return reloadSound; } }
-    [SerializeField] MeshRenderer weaponMesh;
-    public MeshRenderer WeaponMesh { get { return WeaponMesh; } }
+    [SerializeField] MeshFilter weaponMesh;
+    public MeshFilter WeaponMesh { get { return weaponMesh; } }
     [SerializeField] protected GameObject projectile;
     public GameObject Projectile { get { return projectile; } }
     [SerializeField] int maxAmmo;
     public int MaxAmmo { get { return maxAmmo; } }
-    [SerializeField] float weaponDmg;
+    [SerializeField] protected float weaponDmg;
     public float WeaponDmg { get { return weaponDmg; } }
     [SerializeField] float weaponDelay;
     public float WeaponDelay { get { return weaponDelay; } }
     [SerializeField] float  weaponReloadTime;
     public float WeaponReloadTime { get { return weaponReloadTime; } }
 
-    public abstract void FireWeapon();
+    public abstract void FireWeapon(Transform weaponFirePoint);
     
 }

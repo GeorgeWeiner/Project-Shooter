@@ -9,17 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a73b1a635bcac428fdda307e171db7, type: 3}
-  m_Name: ShotgunPistol
+  m_Script: {fileID: 11500000, guid: 95999abcb0e5ffa4ba8caca59e8db78f, type: 3}
+  m_Name: RocketLauncher
   m_EditorClassIdentifier: 
   weaponSound: {fileID: 0}
   reloadSound: {fileID: 0}
   weaponMesh: {fileID: 81328958449725139, guid: 4087c9ef1cd97db488f685b7de351979, type: 3}
-  projectile: {fileID: 3854647004635449186, guid: 156bba2019b48f14488cd265ad7ad7b9, type: 3}
-  maxAmmo: 30
+  projectile: {fileID: 0}
+  maxAmmo: 400
   weaponDmg: 3
-  weaponDelay: 1
-  weaponReloadTime: 3
-  numberOfBullets: 5
-  ySpray: 61.37
-  xSpray: 146.1
+  weaponDelay: 0.2
+  weaponReloadTime: 0.1
