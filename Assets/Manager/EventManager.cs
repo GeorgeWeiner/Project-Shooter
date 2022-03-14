@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EventManager : BaseSingleton<EventManager>
 {
     public delegate void ReloadWeapon();
     public event ReloadWeapon reloadWeapon;
+
     void Update()
     {
         ReloadWeaponEvent();
@@ -19,5 +21,5 @@ public class EventManager : BaseSingleton<EventManager>
                 reloadWeapon();
             }
         }
-    }
+    }  
 }

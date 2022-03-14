@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a73b1a635bcac428fdda307e171db7, type: 3}
-  m_Name: ShotgunPistol
+  m_Script: {fileID: 11500000, guid: 393ec5a4e2611864eaba0c5809b27815, type: 3}
+  m_Name: PlasmaCutter
   m_EditorClassIdentifier: 
   weaponSound: {fileID: 0}
   reloadSound: {fileID: 0}
   weaponMesh: {fileID: 0}
   projectile: {fileID: 0}
-  maxAmmo: 30
-  weaponDmg: 3
+  maxAmmo: 40
+  weaponDmg: 4
   weaponDelay: 4
   weaponReloadTime: 3

@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "NewWeapon")]
-public class WeaponData : ScriptableObject 
+public abstract class Weapon : ScriptableObject 
 {
     [SerializeField] AudioClip weaponSound;
     public AudioClip WeaponSound { get { return weaponSound; } }
@@ -11,7 +10,7 @@ public class WeaponData : ScriptableObject
     public AudioClip ReloadSound { get { return reloadSound; } }
     [SerializeField] MeshRenderer weaponMesh;
     public MeshRenderer WeaponMesh { get { return WeaponMesh; } }
-    [SerializeField] GameObject projectile;
+    [SerializeField] protected GameObject projectile;
     public GameObject Projectile { get { return projectile; } }
     [SerializeField] int maxAmmo;
     public int MaxAmmo { get { return maxAmmo; } }
@@ -21,5 +20,7 @@ public class WeaponData : ScriptableObject
     public float WeaponDelay { get { return weaponDelay; } }
     [SerializeField] float  weaponReloadTime;
     public float WeaponReloadTime { get { return weaponReloadTime; } }
+
+    public abstract void FireWeapon();
     
 }
