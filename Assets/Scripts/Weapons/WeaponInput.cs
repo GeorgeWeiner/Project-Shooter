@@ -6,14 +6,14 @@ public class WeaponInput : MonoBehaviour
 {
     [SerializeField] Weapon weaponToFire;
     public Weapon WeaponToFire { get { return weaponToFire; } set { weaponToFire = value; } }
-    int currentWeaponAmmo;
+    [SerializeField] MeshFilter weaponMesh;
+    [SerializeField] int currentWeaponAmmo;
     public int CurrentWeaponAmmo { get { return currentWeaponAmmo; } set { currentWeaponAmmo = value; } }
     bool canShoot = true;
-
     private void Awake()
     {
-        currentWeaponAmmo = weaponToFire.MaxAmmo;
         weaponToFire = Inventory.Instance.CurrentlyEquippedWeapon;
+        currentWeaponAmmo = weaponToFire.MaxAmmo;
     }
     void Update()
     {
@@ -22,18 +22,26 @@ public class WeaponInput : MonoBehaviour
     }
     void FireCurrentWeapon()
     {
-        if (PlayerInput.Shoot() && canShoot)
+        if (PlayerInput.Shoot() && canShoot && currentWeaponAmmo > 0)
         {
             StartCoroutine(WeaponDelay());
             weaponToFire.FireWeapon();
+            currentWeaponAmmo -= 1;
         }
     }
     void ReloadCurrentWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.R) && canShoot)
+        if (Input.GetKeyDown(KeyCode.R) && canShoot )
         {
             StartCoroutine(ReloadWeapon()); 
         }
+    }
+    public void ChangeMesh(MeshFilter weaponMeshToChangeTo)
+    {
+        Debug.Log("HEHEHEHEHH");
+        var tempMesh = weaponMeshToChangeTo.sharedMesh;
+        Debug.Log(tempMesh);
+        weaponMesh.mesh = tempMesh;
     }
     IEnumerator WeaponDelay()
     {

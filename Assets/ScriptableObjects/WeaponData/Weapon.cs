@@ -8,8 +8,8 @@ public abstract class Weapon : ScriptableObject
     public AudioClip WeaponSound { get { return weaponSound; } }
     [SerializeField] AudioClip reloadSound;
     public AudioClip ReloadSound { get { return reloadSound; } }
-    [SerializeField] MeshRenderer weaponMesh;
-    public MeshRenderer WeaponMesh { get { return WeaponMesh; } }
+    [SerializeField] MeshFilter weaponMesh;
+    public MeshFilter WeaponMesh { get { return weaponMesh; } }
     [SerializeField] protected GameObject projectile;
     public GameObject Projectile { get { return projectile; } }
     [SerializeField] int maxAmmo;

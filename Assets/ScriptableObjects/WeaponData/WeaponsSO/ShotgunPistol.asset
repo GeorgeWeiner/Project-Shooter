@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponSound: {fileID: 0}
   reloadSound: {fileID: 0}
-  weaponMesh: {fileID: 0}
+  weaponMesh: {fileID: 919565999023682566, guid: 43d346609b86fdd4e9c90afb41573ec2, type: 3}
   projectile: {fileID: 0}
   maxAmmo: 30
   weaponDmg: 3
-  weaponDelay: 4
+  weaponDelay: 1
   weaponReloadTime: 3

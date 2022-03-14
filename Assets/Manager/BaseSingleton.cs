@@ -7,7 +7,7 @@ public abstract class BaseSingleton<T> : MonoBehaviour where T : MonoBehaviour
     static T instance;
     static public T Instance { get { return instance; } }
    
-    private void Awake()
+    protected virtual void Awake()
     {
         if(instance == null)
         {
@@ -21,11 +21,5 @@ public abstract class BaseSingleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             Destroy(this);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
