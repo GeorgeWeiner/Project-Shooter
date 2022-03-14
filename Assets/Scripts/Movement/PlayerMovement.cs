@@ -13,6 +13,7 @@ namespace Movement
         [SerializeField] private float distanceToGround;
         [SerializeField] private float maxDistanceGroundInfo;
         [SerializeField] private float gravityStrength;
+        [SerializeField] private float gravityAcceleration;
 
         private Rigidbody _rb;
         private CapsuleCollider _col;
@@ -33,6 +34,7 @@ namespace Movement
         private void FixedUpdate()
         {
             MovePlayer();
+            GravityStrength();
         }
 
         private void MovePlayer()
@@ -66,14 +68,6 @@ namespace Movement
             return PlayerInput.Sprint() ? sprintSpeed : walkSpeed;
         }
 
-        private void Interact()
-        {
-            if (PlayerInput.Interact())
-            {
-                //Do thing to pick up props and stuff.
-            }
-        }
-
         private bool IsGrounded()
         {
             var bounds = _col.bounds;
@@ -90,6 +84,18 @@ namespace Movement
                 groundLayer, QueryTriggerInteraction.Ignore);
             
             return hit;
+        }
+
+        private void GravityStrength()
+        {
+            if (!IsGrounded())
+            {
+                gravityStrength += gravityAcceleration * Time.fixedDeltaTime;
+            }
+            else
+            {
+                gravityStrength = 0f;
+            }
         }
     }
 }
