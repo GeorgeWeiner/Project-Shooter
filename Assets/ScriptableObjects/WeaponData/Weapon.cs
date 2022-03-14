@@ -14,13 +14,13 @@ public abstract class Weapon : ScriptableObject
     public GameObject Projectile { get { return projectile; } }
     [SerializeField] int maxAmmo;
     public int MaxAmmo { get { return maxAmmo; } }
-    [SerializeField] float weaponDmg;
+    [SerializeField] protected float weaponDmg;
     public float WeaponDmg { get { return weaponDmg; } }
     [SerializeField] float weaponDelay;
     public float WeaponDelay { get { return weaponDelay; } }
     [SerializeField] float  weaponReloadTime;
     public float WeaponReloadTime { get { return weaponReloadTime; } }
 
-    public abstract void FireWeapon();
+    public abstract void FireWeapon(Transform weaponFirePoint);
     
 }

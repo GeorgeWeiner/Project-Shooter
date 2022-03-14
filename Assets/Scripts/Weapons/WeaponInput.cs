@@ -6,6 +6,7 @@ public class WeaponInput : MonoBehaviour
 {
     [SerializeField] Weapon weaponToFire;
     public Weapon WeaponToFire { get { return weaponToFire; } set { weaponToFire = value; } }
+    [SerializeField] Transform weaponTransform;
     [SerializeField] MeshFilter weaponMesh;
     [SerializeField] int currentWeaponAmmo;
     public int CurrentWeaponAmmo { get { return currentWeaponAmmo; } set { currentWeaponAmmo = value; } }
@@ -25,7 +26,7 @@ public class WeaponInput : MonoBehaviour
         if (PlayerInput.Shoot() && canShoot && currentWeaponAmmo > 0)
         {
             StartCoroutine(WeaponDelay());
-            weaponToFire.FireWeapon();
+            weaponToFire.FireWeapon(weaponTransform);
             currentWeaponAmmo -= 1;
         }
     }

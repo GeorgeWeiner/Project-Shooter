@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponToFire: {fileID: 11400000, guid: d123706a75ac59d4b9529924786fcf10, type: 2}
+  weaponTransform: {fileID: 1306427745}
   weaponMesh: {fileID: 1306427748}
   currentWeaponAmmo: 0
 --- !u!1 &15496662
@@ -692,6 +693,11 @@ MonoBehaviour:
     m_Bits: 128
   interactionKey: 101
   interactionRange: 15
+--- !u!4 &1306427745 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 81328958449725143, guid: 4087c9ef1cd97db488f685b7de351979, type: 3}
+  m_PrefabInstance: {fileID: 81328958067807342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!33 &1306427748 stripped
 MeshFilter:
   m_CorrespondingSourceObject: {fileID: 81328958449725139, guid: 4087c9ef1cd97db488f685b7de351979, type: 3}
