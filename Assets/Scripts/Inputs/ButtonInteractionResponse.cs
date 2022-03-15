@@ -1,4 +1,4 @@
-﻿using DefaultNamespace.Interfaces;
+﻿using Interfaces;
 using UnityEngine;
 
 namespace DefaultNamespace

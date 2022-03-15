@@ -7,13 +7,14 @@ namespace Movement
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] private float walkSpeed, sprintSpeed;
+        [SerializeField] private float walkSpeed = 150f;
+        [SerializeField] private float sprintSpeed = 230f;
         [SerializeField] private float jumpForce = 10f;
-        [SerializeField] private LayerMask groundLayer;
-        [SerializeField] private float distanceToGround;
-        [SerializeField] private float maxDistanceGroundInfo;
+        [SerializeField] private float distanceToGround = 1f;
+        [SerializeField] private float maxDistanceGroundInfo = 5f;
         [SerializeField] private float gravityStrength;
-        [SerializeField] private float gravityAcceleration;
+        [SerializeField] private float gravityAcceleration = 50f;
+        [SerializeField] private LayerMask groundLayer;
 
         private Rigidbody _rb;
         private CapsuleCollider _col;

@@ -1,4 +1,4 @@
-﻿using DefaultNamespace.Interfaces;
+﻿using Interfaces;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -33,6 +33,8 @@ namespace DefaultNamespace
                 _currentProgress -= doorSpeed * Time.deltaTime;
         }
 
+        #region ContextMenus
+        //For setting the values in the editor.
         [ContextMenu("Set Door Closed Position")]
         private void EditDoorPositionClosed()
         {
@@ -43,6 +45,7 @@ namespace DefaultNamespace
         {
             doorState.doorStates[1] = doorState.door.localPosition;
         }
+        #endregion
     }
 
     [System.Serializable]

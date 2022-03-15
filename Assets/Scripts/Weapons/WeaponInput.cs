@@ -32,7 +32,7 @@ public class WeaponInput : MonoBehaviour
     }
     void ReloadCurrentWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.R) && canShoot )
+        if (PlayerInput.Reload() && canShoot )
         {
             StartCoroutine(ReloadWeapon()); 
         }

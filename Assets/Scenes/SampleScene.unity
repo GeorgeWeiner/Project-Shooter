@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.54662645, g: 0.35603824, b: 0.3190547, a: 1}
+  m_IndirectSpecularColor: {r: 0.5465816, g: 0.35599658, b: 0.31890106, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4373,27 +4373,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &724072777 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 987798726, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-  m_PrefabInstance: {fileID: 981361988}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &724072780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724072777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9afdd13d06af09241aefb094ac1e7ca7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxInteractionDistance: 30
-  interactionLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &743960234
 GameObject:
   m_ObjectHideFlags: 0
@@ -5998,42 +5977,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 987798727, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: sensX
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 987798727, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: sensY
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1048686617, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.00000023841858
-      objectReference: {fileID: 0}
-    - target: {fileID: 1048686618, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: volumeLayerMask.m_Bits
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 1048686619, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: m_UpdateMethod
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1048686619, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: m_BlendUpdateMethod
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1174146530, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.00000023841858
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407262669, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: m_AmplitudeGain
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407262669, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: m_FrequencyGain
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477697, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6081,54 +6024,6 @@ PrefabInstance:
     - target: {fileID: 2893337773972477701, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2893337773972477703, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: m_Drag
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2893337773972477703, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2893337773972477703, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2893337773972477703, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: jumpForce
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: walkSpeed
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: sprintSpeed
-      value: 230
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: movementSpeed
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: gravityStrength
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: distanceToGround
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: gravityAcceleration
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-      propertyPath: maxDistanceGroundInfo
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
