@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using BaseScripts;
 using UnityEngine;
 
 public abstract class ScriptableEvent : MonoBehaviour
