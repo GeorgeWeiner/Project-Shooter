@@ -7759,6 +7759,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4950036303371564, guid: f30311a07dfed684a81dea417623c73c, type: 3}
   m_PrefabInstance: {fileID: 845439637}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &848276102 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1174146530, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
+  m_PrefabInstance: {fileID: 981361988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &858691090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19065,11 +19070,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4447049376506818, guid: d2b2bc861ac63fc48a394d85d73dbc87, type: 3}
   m_PrefabInstance: {fileID: 2033170047}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2034036217 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1048686617, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
-  m_PrefabInstance: {fileID: 981361988}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2035416316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20580,9 +20580,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enable: 1
-  amplitude: 1000
-  frequency: 11000
-  cam: {fileID: 2034036217}
+  amplitude: 0.02
+  frequency: 20
+  cam: {fileID: 848276102}
   cameraHolder: {fileID: 734906168}
 --- !u!1001 &2146992761
 PrefabInstance:
