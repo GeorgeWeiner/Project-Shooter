@@ -9,5 +9,4 @@ public class PlasmaCutter : Weapon
     {
         Debug.Log("Fire");
     }
-
 }

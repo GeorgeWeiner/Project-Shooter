@@ -11,7 +11,7 @@ public class WeaponInput : MonoBehaviour
     [SerializeField] int currentWeaponAmmo;
     public int CurrentWeaponAmmo { get { return currentWeaponAmmo; } set { currentWeaponAmmo = value; } }
     bool canShoot = true;
-    private void Awake()
+    private void Start()
     {
         weaponToFire = Inventory.Instance.CurrentlyEquippedWeapon;
         currentWeaponAmmo = weaponToFire.MaxAmmo;

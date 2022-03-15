@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2202ed47a73f094bb3b2eb956fbb56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileForce: 200
+  projectileForce: 400
 --- !u!33 &1688527289061972489
 MeshFilter:
   m_ObjectHideFlags: 0
