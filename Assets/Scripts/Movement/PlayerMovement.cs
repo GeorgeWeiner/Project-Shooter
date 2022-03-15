@@ -69,7 +69,7 @@ namespace Movement
             return PlayerInput.Sprint() ? sprintSpeed : walkSpeed;
         }
 
-        private bool IsGrounded()
+        public bool IsGrounded()
         {
             var bounds = _col.bounds;
             var capsuleBottom = new Vector3(bounds.center.x, bounds.min.y, bounds.center.z);
