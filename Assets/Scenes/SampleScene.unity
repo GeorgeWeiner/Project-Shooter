@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.05742976, g: 0.040549286, b: 0.037428, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1951,7 +1951,7 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls: []
-  delay: 3
+  delay: 4
   delayedUnityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1977,9 +1977,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: aa94f6f750b7ff443b372add680850ac, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6674d676ded6f4442b31e92f82e8bedb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1991,9 +1991,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -3570,7 +3570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_Intensity
-      value: 5904.234
+      value: 10470.126
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_SpotAngle
@@ -3640,7 +3640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 14283.477
+  m_Intensity: 25329.248
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 47.1
@@ -7237,7 +7237,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7313,7 +7313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 1.5
+  m_Intensity: 1
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -9782,7 +9782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_Intensity
-      value: 845.2649
+      value: 4215.1367
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_SpotAngle
@@ -9852,7 +9852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 5079.295
+  m_Intensity: 25329.248
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 94.7
@@ -10367,7 +10367,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1048686617, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.000000029330634
+      objectReference: {fileID: 0}
+    - target: {fileID: 1048686617, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000000528128
       objectReference: {fileID: 0}
     - target: {fileID: 1048686618, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: volumeLayerMask.m_Bits
@@ -10399,7 +10403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477701, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71.35
+      value: 59.85
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477701, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10411,19 +10415,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477701, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071079
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477701, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477701, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.70710576
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477701, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477701, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10431,7 +10435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477701, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2893337773972477701, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -10442,8 +10446,16 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
+      propertyPath: walkSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: crouchSpeed
       value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
+      propertyPath: sprintSpeed
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 5981226827180189929, guid: d1cdf3e413f64d24db41abfc07c7ff68, type: 3}
       propertyPath: crouchScale.x
@@ -11207,7 +11219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_Intensity
-      value: 5904.234
+      value: 10470.126
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_SpotAngle
@@ -11277,7 +11289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 14283.477
+  m_Intensity: 25329.248
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 47.1
@@ -13804,7 +13816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1233789319
 Transform:
   m_ObjectHideFlags: 0
@@ -14565,7 +14577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2863951543310906607, guid: e32e304662bab2e44965ae09cfe6b3fc, type: 3}
       propertyPath: doorSpeed
-      value: 0.1
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2863951543310906607, guid: e32e304662bab2e44965ae09cfe6b3fc, type: 3}
       propertyPath: someGameEvent
@@ -16557,7 +16569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_Intensity
-      value: 5904.234
+      value: 10470.126
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_SpotAngle
@@ -16627,7 +16639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 14283.477
+  m_Intensity: 25329.248
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 47.1
@@ -18261,7 +18273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_Intensity
-      value: 5904.234
+      value: 10470.126
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_SpotAngle
@@ -18331,7 +18343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 14283.477
+  m_Intensity: 25329.248
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 47.1
@@ -20691,7 +20703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_Intensity
-      value: 845.2649
+      value: 4215.1367
       objectReference: {fileID: 0}
     - target: {fileID: 108068664889891534, guid: 5ccb7635a0b4e9c408b824b36c335674, type: 3}
       propertyPath: m_SpotAngle
@@ -20761,7 +20773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 5079.295
+  m_Intensity: 25329.248
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 94.7

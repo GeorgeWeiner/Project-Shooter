@@ -12,7 +12,7 @@ namespace DefaultNamespace
         [SerializeField] private GameEvent someGameEvent;
         
         private float _currentProgress;
-        
+
         public void ExecuteButtonFunctionality()
         {
             if (_currentProgress > 0.99f || _currentProgress < 0.01f)
