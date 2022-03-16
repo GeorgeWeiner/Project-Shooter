@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a73b1a635bcac428fdda307e171db7, type: 3}
   m_Name: ShotgunPistol
   m_EditorClassIdentifier: 
-  weaponSound: {fileID: 0}
-  reloadSound: {fileID: 0}
-  weaponMesh: {fileID: 81328958449725139, guid: 4087c9ef1cd97db488f685b7de351979, type: 3}
+  hitLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  weaponSound: {fileID: 8300000, guid: afd87bd0bf41ca441aa229660e7d0a68, type: 3}
+  reloadSound: {fileID: 8300000, guid: 2a78ab9f421e3064eadbd42736aa7177, type: 3}
+  weaponMesh: {fileID: 3300000, guid: bf2593fe0c804b84688e307cfb1ddfae, type: 3}
   projectile: {fileID: 3854647004635449186, guid: 156bba2019b48f14488cd265ad7ad7b9, type: 3}
   maxAmmo: 30
   weaponDmg: 3
   weaponDelay: 1
   weaponReloadTime: 3
   numberOfBullets: 5
-  ySpray: 61.37
-  xSpray: 146.1
+  ySpray: 0.2
+  xSpray: 0.2

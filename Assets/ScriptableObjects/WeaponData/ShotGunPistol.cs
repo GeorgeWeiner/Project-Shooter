@@ -10,15 +10,22 @@ public class ShotGunPistol : Weapon
     [SerializeField] float xSpray;
     public override void FireWeapon(Transform weaponFirePoint)
     {
+        AudioSource.PlayClipAtPoint(weaponSound, weaponFirePoint.position);
         for (int i = 0; i < numberOfBullets; i++)
         {
-            Debug.Log("HEY");
-            float xAngle = Random.Range(-xSpray,xSpray);
-            float yAngle = Random.Range(-ySpray, ySpray);
-            var tempProjectile = Instantiate(projectile, weaponFirePoint.position,weaponFirePoint.rotation);
-            tempProjectile.transform.rotation = Quaternion.Euler(tempProjectile.transform.localRotation.x + xAngle, tempProjectile.transform.localRotation.y + yAngle, 0);
-            var tempProjectileComponent = tempProjectile.GetComponent<Projectile>();
-            tempProjectileComponent.ProjectileDmg = weaponDmg;
+            RaycastHit hitInfo;
+            float xOffset= Random.Range(-xSpray,xSpray);
+            float yOffset = Random.Range(-ySpray, ySpray);
+            Ray ray = new Ray(weaponFirePoint.position , -weaponFirePoint.forward + new Vector3(xOffset, yOffset, 0));
+            bool hitTarget = Physics.Raycast(ray, out hitInfo, float.MaxValue, hitLayer);
+            if (hitTarget)
+            {
+                Debug.Log("HEHEHEHEHEH");
+                if(hitInfo.collider.gameObject.GetComponent<IDamageable>() != null)
+                {
+                    hitInfo.collider.gameObject.GetComponent<IDamageable>().TakeDmg(weaponDmg);
+                } 
+            }
         }
     }
 }

@@ -18,6 +18,9 @@ public class WeaponInput : MonoBehaviour
     }
     void Update()
     {
+        float xOffset = Random.Range(-0.2f, 0.2f);
+        float yOffset = Random.Range(-0.2f, 0.2f);
+        Debug.DrawRay(weaponTransform.position, weaponTransform.forward + new Vector3(xOffset, yOffset, 0),Color.black);
         FireCurrentWeapon();
         ReloadCurrentWeapon();
     }
