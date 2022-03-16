@@ -28,7 +28,9 @@ public class WeaponInput : MonoBehaviour
     {
         if (PlayerInput.Shoot() && canShoot && currentWeaponAmmo > 0)
         {
+            StartCoroutine(weaponToFire.MuzzleFlash(weaponTransform));
             StartCoroutine(WeaponDelay());
+            AudioSource.PlayClipAtPoint(weaponToFire.WeaponSound, weaponTransform.position,3f);
             weaponToFire.FireWeapon(weaponTransform);
             currentWeaponAmmo -= 1;
         }
@@ -55,6 +57,7 @@ public class WeaponInput : MonoBehaviour
     }
     IEnumerator ReloadWeapon()
     {
+        AudioSource.PlayClipAtPoint(weaponToFire.ReloadSound, weaponTransform.position, 3f);
         canShoot = false;
         yield return new WaitForSeconds(weaponToFire.WeaponReloadTime);
         currentWeaponAmmo = weaponToFire.MaxAmmo;

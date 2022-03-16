@@ -15,10 +15,10 @@ MonoBehaviour:
   hitLayer:
     serializedVersion: 2
     m_Bits: 512
-  weaponSound: {fileID: 8300000, guid: afd87bd0bf41ca441aa229660e7d0a68, type: 3}
+  weaponSound: {fileID: 8300000, guid: 02a2c26bc9677004c9e1c8766ab5a9e1, type: 3}
   reloadSound: {fileID: 8300000, guid: 2a78ab9f421e3064eadbd42736aa7177, type: 3}
   weaponMesh: {fileID: 3300000, guid: bf2593fe0c804b84688e307cfb1ddfae, type: 3}
-  projectile: {fileID: 3854647004635449186, guid: 156bba2019b48f14488cd265ad7ad7b9, type: 3}
+  projectile: {fileID: 311832067853610290, guid: dd9203ad1e01231418784bc91dc4fe19, type: 3}
   maxAmmo: 30
   weaponDmg: 3
   weaponDelay: 1

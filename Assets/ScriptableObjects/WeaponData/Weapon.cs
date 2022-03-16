@@ -23,5 +23,12 @@ public abstract class Weapon : ScriptableObject
     public float WeaponReloadTime { get { return weaponReloadTime; } }
 
     public abstract void FireWeapon(Transform weaponFirePoint);
+    public IEnumerator MuzzleFlash(Transform muzzleFlashPosition)
+    {
+        var tempProjectile = Instantiate(projectile,-muzzleFlashPosition.forward , muzzleFlashPosition.rotation);
+        tempProjectile.transform.position = muzzleFlashPosition.position ;
+        yield return new WaitForSeconds(0.1f);
+        Destroy(tempProjectile);
+    }
     
 }
