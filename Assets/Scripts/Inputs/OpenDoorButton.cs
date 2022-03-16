@@ -1,4 +1,6 @@
-﻿using Interfaces;
+﻿using System;
+using Events;
+using Interfaces;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -7,12 +9,17 @@ namespace DefaultNamespace
     {
         [SerializeField] private DoorPosition doorState;
         [SerializeField] private float doorSpeed;
+        [SerializeField] private GameEvent someGameEvent;
         
         private float _currentProgress;
         
         public void ExecuteButtonFunctionality()
         {
-            doorState.isOpen = !doorState.isOpen;
+            if (_currentProgress > 0.99f || _currentProgress < 0.01f)
+            {
+                doorState.isOpen = !doorState.isOpen;
+                someGameEvent.Invoke();
+            }
         }
 
         private void Update()
