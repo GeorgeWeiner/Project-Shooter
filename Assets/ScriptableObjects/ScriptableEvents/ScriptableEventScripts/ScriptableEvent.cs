@@ -19,5 +19,4 @@ public abstract  class ScriptableEvent : ScriptableObject
     {
         EventFunction<T>(parameter);
     }
-   
 }
