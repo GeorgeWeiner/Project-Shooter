@@ -5,9 +5,9 @@ using UnityEngine;
 public abstract class Weapon : ScriptableObject 
 {
     [SerializeField] protected LayerMask hitLayer;
-    [SerializeField] AudioClip weaponSound;
+    [SerializeField] protected AudioClip weaponSound;
     public AudioClip WeaponSound { get { return weaponSound; } }
-    [SerializeField] AudioClip reloadSound;
+    [SerializeField] protected AudioClip reloadSound;
     public AudioClip ReloadSound { get { return reloadSound; } }
     [SerializeField] MeshFilter weaponMesh;
     public MeshFilter WeaponMesh { get { return weaponMesh; } }

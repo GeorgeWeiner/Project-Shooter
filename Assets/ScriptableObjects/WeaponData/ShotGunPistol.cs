@@ -10,6 +10,7 @@ public class ShotGunPistol : Weapon
     [SerializeField] float xSpray;
     public override void FireWeapon(Transform weaponFirePoint)
     {
+        AudioSource.PlayClipAtPoint(weaponSound, weaponFirePoint.position);
         for (int i = 0; i < numberOfBullets; i++)
         {
             RaycastHit hitInfo;
