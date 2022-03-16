@@ -9,7 +9,6 @@ namespace Player
     
         private bool _flashLightToggled;
 
-
         private void Update()
         {
             ToggleFlashlight();
