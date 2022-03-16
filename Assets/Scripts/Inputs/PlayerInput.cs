@@ -17,6 +17,8 @@ namespace Inputs
         public static bool Reload() => Input.GetKeyDown(KeyCode.R);
         public static bool Interact() => Input.GetKeyDown(KeyCode.E);
         public static bool Sprint() => Input.GetKey(KeyCode.LeftShift);
+        public static bool Crouch() => Input.GetKey(KeyCode.LeftControl);
+        public static bool Flashlight() => Input.GetKeyDown(KeyCode.F);
 #endif        
         
         public static Vector3 playerForward;
