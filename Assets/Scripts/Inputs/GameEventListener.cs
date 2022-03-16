@@ -6,8 +6,8 @@ namespace Inputs
 {
     public class GameEventListener : MonoBehaviour
     {
-        [SerializeField] private GameEvent gameEvent;
-        [SerializeField] private UnityEvent unityEvent;
+        [SerializeField] protected GameEvent gameEvent;
+        [SerializeField] protected UnityEvent unityEvent;
 
         private void Awake()
         {
@@ -19,7 +19,7 @@ namespace Inputs
             gameEvent.Deregister(this);
         }
 
-        public void RaiseEvent()
+        public virtual void RaiseEvent()
         {
             unityEvent.Invoke();
         }
