@@ -1,4 +1,5 @@
-﻿using Events;
+﻿using System;
+using Events;
 using Interfaces;
 using UnityEngine;
 
@@ -14,8 +15,11 @@ namespace DefaultNamespace
         
         public void ExecuteButtonFunctionality()
         {
-            doorState.isOpen = !doorState.isOpen;
-            someGameEvent.Invoke();
+            if (_currentProgress > 0.99f || _currentProgress < 0.01f)
+            {
+                doorState.isOpen = !doorState.isOpen;
+                someGameEvent.Invoke();
+            }
         }
 
         private void Update()
