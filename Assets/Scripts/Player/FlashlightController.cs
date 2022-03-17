@@ -1,3 +1,4 @@
+using System;
 using Inputs;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace Player
     public class FlashlightController : MonoBehaviour
     {
         [SerializeField] private GameObject flashlight;
+        [SerializeField] private AudioSource audioSource;
     
         private bool _flashLightToggled;
 
@@ -20,7 +22,7 @@ namespace Player
             _flashLightToggled = !_flashLightToggled;
             flashlight.SetActive(_flashLightToggled);
             
-            //Play sound here or whatever
+            audioSource.PlayOneShot(audioSource.clip);
         }
     }
 }

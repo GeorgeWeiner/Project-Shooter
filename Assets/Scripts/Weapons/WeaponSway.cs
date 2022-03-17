@@ -18,6 +18,17 @@ namespace Weapons
 
       private void Update()
       {
+         ApplySway();
+      }
+
+      private void ApplySway()
+      {
+         transform.localPosition = Vector3.Lerp(transform.localPosition, _initialPosition + CalculateSway(),
+            Time.deltaTime * smoothAmount);
+      }
+
+      private Vector3 CalculateSway()
+      {
          var movementX = PlayerInput.MouseInputX() * amount;
          var movementY = PlayerInput.MouseInputY() * amount;
 
@@ -25,8 +36,7 @@ namespace Weapons
          movementY = Mathf.Clamp(movementY, -maxAmount, maxAmount);
 
          var finalPosition = new Vector3(movementY, movementX, 0f);
-         transform.localPosition = Vector3.Lerp(transform.localPosition, _initialPosition + finalPosition,
-            Time.deltaTime * smoothAmount);
+         return finalPosition;
       }
    }
 }
