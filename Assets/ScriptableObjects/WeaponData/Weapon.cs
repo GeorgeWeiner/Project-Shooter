@@ -9,10 +9,10 @@ public abstract class Weapon : ScriptableObject
     public AudioClip WeaponSound { get { return weaponSound; } }
     [SerializeField] protected AudioClip reloadSound;
     public AudioClip ReloadSound { get { return reloadSound; } }
-    [SerializeField] MeshFilter weaponMesh;
-    public MeshFilter WeaponMesh { get { return weaponMesh; } }
-    [SerializeField] protected GameObject projectile;
-    public GameObject Projectile { get { return projectile; } }
+    [SerializeField] GameObject weaponPrefab;
+    public GameObject WeaponPrefab { get { return weaponPrefab; } }
+    [SerializeField] protected GameObject muzzleFlash;
+    public GameObject MuzzleFlash{ get { return muzzleFlash; } }
     [SerializeField] int maxAmmo;
     public int MaxAmmo { get { return maxAmmo; } }
     [SerializeField] protected float weaponDmg;
@@ -23,12 +23,12 @@ public abstract class Weapon : ScriptableObject
     public float WeaponReloadTime { get { return weaponReloadTime; } }
 
     public abstract void FireWeapon(Transform weaponFirePoint);
-    public IEnumerator MuzzleFlash(Transform muzzleFlashPosition)
+    public IEnumerator MuzzleFlashSpawn(Transform muzzleFlashPosition)
     {
-        var tempProjectile = Instantiate(projectile,-muzzleFlashPosition.forward , muzzleFlashPosition.rotation);
-        tempProjectile.transform.position = muzzleFlashPosition.position ;
+        var tempParticles = Instantiate(muzzleFlash, muzzleFlashPosition.forward, muzzleFlashPosition.rotation);
+        tempParticles.transform.position = muzzleFlashPosition.position + muzzleFlashPosition.forward ;
         yield return new WaitForSeconds(0.1f);
-        Destroy(tempProjectile);
+        Destroy(tempParticles);
     }
     
 }

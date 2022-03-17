@@ -7,28 +7,26 @@ public class WeaponInput : MonoBehaviour
     [SerializeField] Weapon weaponToFire;
     public Weapon WeaponToFire { get { return weaponToFire; } set { weaponToFire = value; } }
     [SerializeField] Transform weaponTransform;
-    [SerializeField] MeshFilter weaponMesh;
     [SerializeField] int currentWeaponAmmo;
     public int CurrentWeaponAmmo { get { return currentWeaponAmmo; } set { currentWeaponAmmo = value; } }
     bool canShoot = true;
     private void Start()
     {
-        weaponToFire = Inventory.Instance.CurrentlyEquippedWeapon;
+        
         currentWeaponAmmo = weaponToFire.MaxAmmo;
     }
     void Update()
     {
-        float xOffset = Random.Range(-0.2f, 0.2f);
-        float yOffset = Random.Range(-0.2f, 0.2f);
-        Debug.DrawRay(weaponTransform.position, weaponTransform.forward + new Vector3(xOffset, yOffset, 0),Color.black);
+        
         FireCurrentWeapon();
         ReloadCurrentWeapon();
     }
     void FireCurrentWeapon()
     {
-        if (PlayerInput.Shoot() && canShoot && currentWeaponAmmo > 0)
+        if (PlayerInput.Shoot() && canShoot && currentWeaponAmmo > 0 && weaponToFire != null)
         {
-            StartCoroutine(weaponToFire.MuzzleFlash(weaponTransform));
+            weaponToFire = Inventory.Instance.CurrentlyEquippedWeapon;
+            StartCoroutine(weaponToFire.MuzzleFlashSpawn(weaponTransform));
             StartCoroutine(WeaponDelay());
             AudioSource.PlayClipAtPoint(weaponToFire.WeaponSound, weaponTransform.position,3f);
             weaponToFire.FireWeapon(weaponTransform);
@@ -41,13 +39,6 @@ public class WeaponInput : MonoBehaviour
         {
             StartCoroutine(ReloadWeapon()); 
         }
-    }
-    public void ChangeMesh(MeshFilter weaponMeshToChangeTo)
-    {
-        Debug.Log("HEHEHEHEHH");
-        var tempMesh = weaponMeshToChangeTo.sharedMesh;
-        Debug.Log(tempMesh);
-        weaponMesh.mesh = tempMesh;
     }
     IEnumerator WeaponDelay()
     {

@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393ec5a4e2611864eaba0c5809b27815, type: 3}
   m_Name: PlasmaCutter
   m_EditorClassIdentifier: 
-  weaponSound: {fileID: 0}
-  reloadSound: {fileID: 0}
-  weaponMesh: {fileID: 919565999023682566, guid: 43d346609b86fdd4e9c90afb41573ec2, type: 3}
-  projectile: {fileID: 0}
-  maxAmmo: 40
+  hitLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  weaponSound: {fileID: 8300000, guid: e2babeae8c190144eaa9b327cf3d4b57, type: 3}
+  reloadSound: {fileID: 8300000, guid: 80f385deb9ce6f64b9dadc4b84746a2f, type: 3}
+  weaponPrefab: {fileID: 1491303565171728061, guid: 64d5426be33b8804a92e02359571daf6, type: 3}
+  muzzleFlash: {fileID: 311832067853610290, guid: dd9203ad1e01231418784bc91dc4fe19, type: 3}
+  maxAmmo: 4000
   weaponDmg: 4
-  weaponDelay: 0.1
+  weaponDelay: 0.01
   weaponReloadTime: 3
+  laserRange: 40
+  laser: {fileID: 2391206735859201293, guid: bffde05c105176b4981ef5047e2e9ca3, type: 3}

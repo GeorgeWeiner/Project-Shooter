@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95999abcb0e5ffa4ba8caca59e8db78f, type: 3}
   m_Name: RocketLauncher
   m_EditorClassIdentifier: 
-  weaponSound: {fileID: 0}
-  reloadSound: {fileID: 0}
-  weaponMesh: {fileID: 81328958449725139, guid: 4087c9ef1cd97db488f685b7de351979, type: 3}
-  projectile: {fileID: 0}
+  hitLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  weaponSound: {fileID: 8300000, guid: 059d08de22fc82a45a905ebbbc74d942, type: 3}
+  reloadSound: {fileID: 8300000, guid: c5cfe2638d2d2da4cb0525f09ecb21fa, type: 3}
+  weaponPrefab: {fileID: 6822679862351527847, guid: 9d19da30aac76c342aed28c188aa4efb, type: 3}
+  muzzleFlash: {fileID: 311832067853610290, guid: dd9203ad1e01231418784bc91dc4fe19, type: 3}
   maxAmmo: 400
   weaponDmg: 3
-  weaponDelay: 0.2
+  weaponDelay: 2
   weaponReloadTime: 0.1
+  rocket: {fileID: 6524661636968516824, guid: 77d3373254a183343ba6a586447572df, type: 3}

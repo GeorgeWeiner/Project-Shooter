@@ -8,6 +8,7 @@ public class WeaponInWorld : MonoBehaviour,IInteractable
     public void OnInteraction()
     {
         Inventory.Instance.WeaponsAquired.Add(thisWeapon);
+        Inventory.Instance.AddWeaponPrefab(thisWeapon.WeaponPrefab);
         Inventory.Instance.CurrentlyEquippedWeapon = thisWeapon;
         Destroy(gameObject);
     }

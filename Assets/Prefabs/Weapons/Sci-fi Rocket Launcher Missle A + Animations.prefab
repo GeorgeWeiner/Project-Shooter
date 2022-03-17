@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6524661636968516825}
+  - component: {fileID: 6249695792725806206}
+  - component: {fileID: -4198646215843660379}
+  - component: {fileID: -6490231708147858314}
   m_Layer: 0
   m_Name: Sci-fi Rocket Launcher Missle A + Animations
   m_TagString: Untagged
@@ -31,6 +34,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6249695792725806206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524661636968516824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e5a8fee646e1446a3e6643089a5f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileForce: 20
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  rocketImpact: {fileID: 8300000, guid: b1249f8e7446f23439d2ba83408288ed, type: 3}
+  explosionRange: 20
+  rocketForceMax: 200
+--- !u!54 &-4198646215843660379
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524661636968516824}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &-6490231708147858314
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524661636968516824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6524661637940135281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38,118 +90,107 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6524661636968516825}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_Name
-      value: Sci-fi Rocket Launcher Missle A + Animations
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4160122080863456905, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_Name
-      value: Rocket_Launcher_Missile_A_Fins01
-      objectReference: {fileID: 0}
-    - target: {fileID: -6416598148239252769, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_Name
-      value: Rocket_Launcher_Missile_A_Fins02
-      objectReference: {fileID: 0}
-    - target: {fileID: -6689755015751205430, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
+    - target: {fileID: -7555518734211698470, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d71941a45bee33b48985d4339e493ca7, type: 2}
+    - target: {fileID: -6689755015751205430, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
       propertyPath: m_Name
       value: Rocket_Launcher_Missile_A_Fins03
       objectReference: {fileID: 0}
-    - target: {fileID: -692024205590973555, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_Name
-      value: Rocket_Launcher_Missile_A_Fins04
-      objectReference: {fileID: 0}
-    - target: {fileID: -6532443931470872868, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
+    - target: {fileID: -6532443931470872868, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
       propertyPath: m_Name
       value: Rocket_Launcher_Missile_A_Head
       objectReference: {fileID: 0}
-    - target: {fileID: -7555518734211698470, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d71941a45bee33b48985d4339e493ca7, type: 2}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+    - target: {fileID: -6416598148239252769, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_Name
+      value: Rocket_Launcher_Missile_A_Fins02
       objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.000083462735
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.4647
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.4647
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.4647
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.000083462735
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
+    - target: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -3601641310557473380, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
+    - target: {fileID: -3601641310557473380, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d71941a45bee33b48985d4339e493ca7, type: 2}
-    - target: {fileID: -1073602785376584046, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
+    - target: {fileID: -1073602785376584046, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d71941a45bee33b48985d4339e493ca7, type: 2}
-    - target: {fileID: 5013103947933726381, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
+    - target: {fileID: -927199367670048503, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_Name
+      value: Sci-fi Rocket Launcher Missle A + Animations
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -692024205590973555, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_Name
+      value: Rocket_Launcher_Missile_A_Fins04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160122080863456905, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
+      propertyPath: m_Name
+      value: Rocket_Launcher_Missile_A_Fins01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013103947933726381, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d71941a45bee33b48985d4339e493ca7, type: 2}
-    - target: {fileID: 6417068423559307400, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-        type: 3}
+    - target: {fileID: 6417068423559307400, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d71941a45bee33b48985d4339e493ca7, type: 2}
@@ -157,7 +198,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
 --- !u!4 &2303298731934740075 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7d6cbd58d275d564683e4f9cc07e2e9d, type: 3}
   m_PrefabInstance: {fileID: 6524661637940135281}
   m_PrefabAsset: {fileID: 0}

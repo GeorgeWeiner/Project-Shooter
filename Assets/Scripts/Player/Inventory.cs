@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Inventory : BaseSingleton<Inventory>
 {
+    [SerializeField] Transform weaponHoldPoint;
+    [SerializeField] List<GameObject> weaponPrefabs;
+    public List<GameObject> WeaponPrefabs { get { return weaponPrefabs; } set { weaponPrefabs = value; } }
     [SerializeField] List<Weapon> weaponsAquired;
     public List<Weapon> WeaponsAquired { get { return weaponsAquired; } set { weaponsAquired = value; } }
     Weapon currentlyEquippedWeapon;
@@ -21,6 +24,7 @@ public class Inventory : BaseSingleton<Inventory>
     {
         playerWeapon = GetComponent<WeaponInput>();
         weaponsAmmo.Add(currentlyEquippedWeapon, playerWeapon.CurrentWeaponAmmo);
+
     }
     private void Update()
     {
@@ -36,7 +40,7 @@ public class Inventory : BaseSingleton<Inventory>
                 currentWeaponIndex++;
                 playerWeapon.WeaponToFire = weaponsAquired[currentWeaponIndex];
                 CurrentlyEquippedWeapon = weaponsAquired[currentWeaponIndex];
-                playerWeapon.ChangeMesh(currentlyEquippedWeapon.WeaponMesh);
+                ChangeWeaponPrefab(weaponPrefabs[currentWeaponIndex]);
                 if (weaponsAmmo.ContainsKey(currentlyEquippedWeapon))
                 {
                     playerWeapon.CurrentWeaponAmmo = weaponsAmmo[currentlyEquippedWeapon];
@@ -53,7 +57,7 @@ public class Inventory : BaseSingleton<Inventory>
                 currentWeaponIndex++;
                 currentlyEquippedWeapon = weaponsAquired[currentWeaponIndex];
                 playerWeapon.WeaponToFire = weaponsAquired[currentWeaponIndex];
-                playerWeapon.ChangeMesh(currentlyEquippedWeapon.WeaponMesh);
+                ChangeWeaponPrefab(weaponPrefabs[currentWeaponIndex]);
                 weaponsAmmo.Add(currentlyEquippedWeapon, currentlyEquippedWeapon.MaxAmmo);
                 playerWeapon.CurrentWeaponAmmo = weaponsAmmo[currentlyEquippedWeapon];
             }
@@ -67,7 +71,7 @@ public class Inventory : BaseSingleton<Inventory>
                 weaponsAmmo[currentlyEquippedWeapon] = playerWeapon.CurrentWeaponAmmo;
                 playerWeapon.WeaponToFire = weaponsAquired[currentWeaponIndex];
                 CurrentlyEquippedWeapon = weaponsAquired[currentWeaponIndex];
-                playerWeapon.ChangeMesh(currentlyEquippedWeapon.WeaponMesh);
+                ChangeWeaponPrefab(weaponPrefabs[currentWeaponIndex]);
                 if (weaponsAmmo.ContainsKey(currentlyEquippedWeapon))
                 {
                     playerWeapon.CurrentWeaponAmmo = weaponsAmmo[currentlyEquippedWeapon];
@@ -78,6 +82,24 @@ public class Inventory : BaseSingleton<Inventory>
                 }
             }
         }
+    }
+    public void AddWeaponPrefab(GameObject weaponPrefabToAdd)
+    {
+        var weapon = Instantiate(weaponPrefabToAdd, weaponHoldPoint.position, weaponHoldPoint.rotation);
+        weapon.transform.SetParent(weaponHoldPoint, true);
+        weaponPrefabs.Add(weapon);
+    }
+    void ChangeWeaponPrefab(GameObject weaponPrefabToSetActive)
+    {
+        for (int i = 0; i < weaponPrefabs.Count; i++)
+        {
+            var weaponPrefabToSetInactive = weaponPrefabs[i];
+            if (weaponPrefabs.Contains(weaponPrefabToSetInactive))
+            {
+                weaponPrefabToSetInactive.SetActive(false);
+            }
+        }
+        weaponPrefabToSetActive.SetActive(true);
     }
     void ChangeCurrentWeapon()
     {
