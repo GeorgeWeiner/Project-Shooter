@@ -29,9 +29,9 @@ namespace Movement
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();
-            _col = GetComponent<CapsuleCollider>();
+            _col = GetComponentInChildren<CapsuleCollider>();
             _playerLook = GetComponentInChildren<PlayerLook>();
-            _normalScale = transform.localScale;
+            _normalScale = _col.transform.localScale;
         }
 
         private void Update()
@@ -114,13 +114,14 @@ namespace Movement
         private void Crouch()
         {
             Vector3 localScale;
+            print(CanStandUp());
             
             if (!PlayerInput.Crouch() && CanStandUp())
                 localScale = _normalScale;
             else
                 localScale = crouchScale;
             
-            transform.localScale = Vector3.MoveTowards(transform.localScale, localScale, crouchSpeed * Time.deltaTime);
+            _col.transform.localScale = Vector3.MoveTowards(_col.transform.localScale, localScale, crouchSpeed * Time.deltaTime);
         }
 
         private bool CanStandUp()

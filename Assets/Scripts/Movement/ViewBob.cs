@@ -1,3 +1,4 @@
+using Inputs;
 using UnityEngine;
 
 namespace Movement
@@ -6,9 +7,15 @@ namespace Movement
     {
         [SerializeField] private bool enable = true;
 
-        [SerializeField] private float amplitude = 0.015f;
-        [SerializeField] private float frequency = 10f;
+        
+        [Header("Intensity")]
+        [SerializeField] private float amplitudeWalking = 0.15f;
+        [SerializeField] private float frequencyWalking = 15f;
+        
+        [SerializeField] private float amplitudeSprinting = 0.3f;
+        [SerializeField] private float frequencySprinting = 25f;
 
+        [Header("Cameras")]
         [SerializeField] private Transform cam;
         [SerializeField] private Transform cameraHolder;
 
@@ -16,6 +23,9 @@ namespace Movement
         private Vector3 _startPos;
         private PlayerMovement _controller;
         private Rigidbody _rb;
+        private float _amplitude;
+        private float _frequency;
+        
 
         private void Awake()
         {
@@ -30,6 +40,7 @@ namespace Movement
             
             CheckMotion();
             ResetPosition();
+            ControlIntensity();
             cam.LookAt(FocusTarget());
         }
 
@@ -59,8 +70,8 @@ namespace Movement
         private Vector3 FootStepMotion()
         {
             var pos = Vector3.zero;
-            pos.y += Mathf.Sin(Time.time * frequency) * amplitude;
-            pos.x += Mathf.Cos(Time.time * frequency / 2) * amplitude * 2;
+            pos.y += Mathf.Sin(Time.time * _frequency) * _amplitude;
+            pos.x += Mathf.Cos(Time.time * _frequency / 2) * _amplitude * 2;
 
             return pos;
         }
@@ -69,8 +80,22 @@ namespace Movement
         {
             var position = transform.position;
             var pos = new Vector3(position.x, position.y + cameraHolder.localPosition.y, position.z);
-            pos += cameraHolder.forward * 15f;
+            pos += cameraHolder.forward * 50f;
             return pos;
+        }
+
+        private void ControlIntensity()
+        {
+            if (PlayerInput.Sprint() && PlayerInput.InputY() != 0f || PlayerInput.Sprint() && PlayerInput.InputX() != 0f)
+            {
+                _amplitude = amplitudeSprinting;
+                _frequency = frequencySprinting;
+            }
+            else
+            {
+                _amplitude = amplitudeWalking;
+                _frequency = frequencyWalking;
+            }
         }
     }
 }

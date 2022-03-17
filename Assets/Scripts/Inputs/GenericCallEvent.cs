@@ -8,7 +8,8 @@ namespace Inputs
         [SerializeField] private GameEvent someGameEvent;
         public void OnInteraction()
         {
-            someGameEvent?.Invoke();
+            if (someGameEvent != null)
+                someGameEvent.Invoke();
         }
     }
 }

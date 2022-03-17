@@ -63,7 +63,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: -1
+    m_Value: 1.0943277
   compensation:
     m_OverrideState: 0
     m_Value: 0.33
@@ -504,7 +504,7 @@ MonoBehaviour:
     m_Value: 383.6
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 400
+    m_Value: 350
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1
@@ -941,14 +941,14 @@ MonoBehaviour:
   m_AdvancedMode: 0
   indirectDiffuseLightingMultiplier:
     m_OverrideState: 1
-    m_Value: 24.99
+    m_Value: 23.75
     min: 0
   indirectDiffuseLightingLayers:
     m_OverrideState: 0
     m_Value: 255
   reflectionLightingMultiplier:
     m_OverrideState: 1
-    m_Value: 2.5
+    m_Value: 5
     min: 0
   reflectionLightingLayers:
     m_OverrideState: 0

@@ -9,6 +9,8 @@ namespace Movement
         public float sensX, sensY;
         public Transform cam;
 
+        [SerializeField] private Transform camAnchor;
+        
         private float _yRotation, _xRotation;
         private const float Multiplier = 100f;
 
@@ -19,7 +21,13 @@ namespace Movement
 
         private void Update()
         {
+            UpdatePosition();
             LookAround();
+        }
+
+        private void UpdatePosition()
+        {
+            transform.position = camAnchor.transform.position;
         }
 
         private void LookAround()

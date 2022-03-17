@@ -1,9 +1,8 @@
-﻿using System;
-using Events;
+﻿using Events;
 using Interfaces;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Inputs
 {
     public class OpenDoorButton : MonoBehaviour, IButtonResponse
     {
@@ -12,13 +11,14 @@ namespace DefaultNamespace
         [SerializeField] private GameEvent someGameEvent;
         
         private float _currentProgress;
-        
+
         public void ExecuteButtonFunctionality()
         {
             if (_currentProgress > 0.99f || _currentProgress < 0.01f)
             {
                 doorState.isOpen = !doorState.isOpen;
-                someGameEvent.Invoke();
+                if (someGameEvent != null) 
+                    someGameEvent.Invoke();
             }
         }
 
