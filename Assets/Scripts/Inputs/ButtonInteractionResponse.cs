@@ -1,7 +1,7 @@
 ﻿using Interfaces;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Inputs
 {
     public class ButtonInteractionResponse : MonoBehaviour, IInteractable
     {
