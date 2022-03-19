@@ -9,6 +9,7 @@ public class WeaponInWorld : MonoBehaviour,IInteractable
     {
         Inventory.Instance.WeaponsAquired.Add(thisWeapon);
         Inventory.Instance.AddWeaponPrefab(thisWeapon.WeaponPrefab);
+        Inventory.Instance.ChangeWeapon();
         Inventory.Instance.CurrentlyEquippedWeapon = thisWeapon;
         Destroy(gameObject);
     }

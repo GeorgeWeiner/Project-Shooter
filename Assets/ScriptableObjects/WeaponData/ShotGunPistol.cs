@@ -10,10 +10,9 @@ public class ShotGunPistol : Weapon
     [SerializeField] float xSpray;
     public override void FireWeapon(Transform weaponFirePoint)
     {
-        
+        AudioSource.PlayClipAtPoint(WeaponSound, weaponFirePoint.position);
         for (int i = 0; i < numberOfBullets; i++)
-        {
-            
+        {  
             RaycastHit hitInfo;
             float xOffset= Random.Range(-xSpray,xSpray);
             float yOffset = Random.Range(-ySpray, ySpray);
@@ -21,7 +20,6 @@ public class ShotGunPistol : Weapon
             bool hitTarget = Physics.Raycast(ray, out hitInfo, float.MaxValue, hitLayer);
             if (hitTarget)
             {
-                Debug.Log("HEHEHEHEHEH");
                 if(hitInfo.collider.gameObject.GetComponent<IDamageable>() != null)
                 {
                     hitInfo.collider.gameObject.GetComponent<IDamageable>().TakeDmg(weaponDmg);

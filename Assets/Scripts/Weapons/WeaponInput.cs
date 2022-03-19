@@ -23,12 +23,14 @@ public class WeaponInput : MonoBehaviour
     }
     void FireCurrentWeapon()
     {
-        if (PlayerInput.Shoot() && canShoot && currentWeaponAmmo > 0 && weaponToFire != null)
+        if (PlayerInput.Shoot() && canShoot && currentWeaponAmmo > 0 && weaponToFire != null )
         {
             weaponToFire = Inventory.Instance.CurrentlyEquippedWeapon;
-            StartCoroutine(weaponToFire.MuzzleFlashSpawn(weaponTransform));
+            if(!Inventory.Instance.CurrentlyEquippedWeapon.IsAutomaticGun)
+            {
+                StartCoroutine(weaponToFire.MuzzleFlashSpawn(weaponTransform));
+            }
             StartCoroutine(WeaponDelay());
-            AudioSource.PlayClipAtPoint(weaponToFire.WeaponSound, weaponTransform.position,3f);
             weaponToFire.FireWeapon(weaponTransform);
             currentWeaponAmmo -= 1;
         }

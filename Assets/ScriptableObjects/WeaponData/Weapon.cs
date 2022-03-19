@@ -21,6 +21,8 @@ public abstract class Weapon : ScriptableObject
     public float WeaponDelay { get { return weaponDelay; } }
     [SerializeField] float  weaponReloadTime;
     public float WeaponReloadTime { get { return weaponReloadTime; } }
+    [SerializeField] bool isAutomaticGun;
+    public bool IsAutomaticGun { get { return isAutomaticGun; } }
 
     public abstract void FireWeapon(Transform weaponFirePoint);
     public IEnumerator MuzzleFlashSpawn(Transform muzzleFlashPosition)
