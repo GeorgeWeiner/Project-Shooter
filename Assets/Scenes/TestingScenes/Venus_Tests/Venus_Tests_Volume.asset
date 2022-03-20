@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa3b8214f75b354e9ba2caadd022259, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   quality:
     m_OverrideState: 0
     m_Value: 1
@@ -759,7 +759,7 @@ MonoBehaviour:
     m_Value: 0
   cloudPreset:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 3
   cumulusMap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -939,7 +939,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0}
   erosionFactor:
     m_OverrideState: 1
-    m_Value: 0.375
+    m_Value: 0.73
   erosionScale:
     m_OverrideState: 1
     m_Value: 50
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9458333, z: 0.87, w: 0}
+    m_Value: {x: 0.99616665, y: 1, z: 0.77, w: 0}
   midtones:
     m_OverrideState: 0
     m_Value: {x: 0.86, y: 0.88566667, z: 1, w: 0}
