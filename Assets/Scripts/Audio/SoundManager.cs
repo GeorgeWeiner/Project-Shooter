@@ -144,6 +144,25 @@ namespace Audio
                 audioSource.PlayOneShot(GetAudioClip(sound));
             }
         }
+        //Can play a repeatable sound like lasers or something else may need optimization
+        public static void PlaySound(AudioClip clipToPlay,string soundSourceName, bool hasOffset,float despawnOffset = 1)
+        {
+            if(GameObject.Find(soundSourceName) == null)
+            {
+                var tempAudioObject = new GameObject(soundSourceName);
+                var tempAudioSource = tempAudioObject.AddComponent<AudioSource>();
+                var despawner = tempAudioObject.AddComponent<SoundObjectDespawner>();
+                tempAudioSource.PlayOneShot(clipToPlay);
+                if (!hasOffset)
+                {
+                    despawner.DespawnSoundObject(clipToPlay.length);
+                }
+                else
+                {
+                    despawner.DespawnSoundObjectWithOffset(clipToPlay, despawnOffset);
+                }  
+            }
+        }
 
         //Checks if the sound can be played again.
         private static bool CanPlaySound(Sound sound){
