@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7acc8c2ba8c26478ee2264ca247068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisWeapon: {fileID: 11400000, guid: f1acd64e42558dc42b06054a17487f42, type: 2}
+  thisWeapon: {fileID: 11400000, guid: bddda3ffde4dba8499a8c2d2ff06b472, type: 2}
 --- !u!65 &457262778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -532,7 +532,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 706137096}
-  - component: {fileID: 706137097}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged

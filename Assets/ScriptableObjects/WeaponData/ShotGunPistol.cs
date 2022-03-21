@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "NewWeapon/ShotgunPistol", fileName = "ShotgunPistol",order = 0)]
+[CreateAssetMenu(menuName = "NewWeapon/Shotgun", fileName = "Shotgun",order = 0)]
 public class ShotGunPistol : Weapon
 {
     [SerializeField] int numberOfBullets;
