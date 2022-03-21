@@ -463,8 +463,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: 
+  sourceProjectPath: ../../Documents/FMOD Studio/venusian_fmod/venusian_fmod.fspro
+  sourceBankPath: ../../Documents/FMOD Studio/venusian_fmod/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -486,7 +486,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -499,8 +500,8 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131588
-  HideSetupWizard: 0
-  LastEventReferenceScanVersion: 0
+  HideSetupWizard: 1
+  LastEventReferenceScanVersion: 131588
   Platforms:
   - {fileID: -1994835210625889794}
   - {fileID: 8541651589872716482}
