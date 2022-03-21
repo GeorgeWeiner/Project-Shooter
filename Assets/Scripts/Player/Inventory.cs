@@ -13,7 +13,7 @@ public class Inventory : BaseSingleton<Inventory>
     public Weapon CurrentlyEquippedWeapon { get { return currentlyEquippedWeapon; } set { currentlyEquippedWeapon = value; } }
     Dictionary<Weapon, int> weaponsAmmo = new Dictionary<Weapon, int>();
     WeaponInput playerWeapon;
-    [SerializeField] int currentWeaponIndex;
+    int currentWeaponIndex;
     protected override void Awake()
     {
         base.Awake();
@@ -24,6 +24,8 @@ public class Inventory : BaseSingleton<Inventory>
     {
         playerWeapon = GetComponent<WeaponInput>();
         weaponsAmmo.Add(currentlyEquippedWeapon, playerWeapon.CurrentWeaponAmmo);
+        AddWeaponPrefab(currentlyEquippedWeapon.WeaponPrefab);
+        ChangeWeaponPrefab(weaponPrefabs[0]);
 
     }
     private void Update()

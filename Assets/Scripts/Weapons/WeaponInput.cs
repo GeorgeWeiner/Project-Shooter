@@ -10,6 +10,7 @@ public class WeaponInput : MonoBehaviour
     [SerializeField] int currentWeaponAmmo;
     public int CurrentWeaponAmmo { get { return currentWeaponAmmo; } set { currentWeaponAmmo = value; } }
     bool canShoot = true;
+    bool isReloading = false;
     private void Start()
     {
         
@@ -23,7 +24,7 @@ public class WeaponInput : MonoBehaviour
     }
     void FireCurrentWeapon()
     {
-        if (PlayerInput.Shoot() && canShoot && currentWeaponAmmo > 0 && weaponToFire != null )
+        if (PlayerInput.Shoot() && canShoot && currentWeaponAmmo > 0 && !isReloading && weaponToFire != null )
         {
             weaponToFire = Inventory.Instance.CurrentlyEquippedWeapon;
             if(!Inventory.Instance.CurrentlyEquippedWeapon.IsAutomaticGun)
@@ -37,7 +38,7 @@ public class WeaponInput : MonoBehaviour
     }
     void ReloadCurrentWeapon()
     {
-        if (PlayerInput.Reload() && canShoot )
+        if (PlayerInput.Reload() && !isReloading)
         {
             StartCoroutine(ReloadWeapon()); 
         }
@@ -51,9 +52,9 @@ public class WeaponInput : MonoBehaviour
     IEnumerator ReloadWeapon()
     {
         AudioSource.PlayClipAtPoint(weaponToFire.ReloadSound, weaponTransform.position, 3f);
-        canShoot = false;
+        isReloading = true;
         yield return new WaitForSeconds(weaponToFire.WeaponReloadTime);
         currentWeaponAmmo = weaponToFire.MaxAmmo;
-        canShoot = true;
+        isReloading = false;
     }
 }

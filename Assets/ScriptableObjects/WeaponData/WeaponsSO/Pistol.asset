@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a73b1a635bcac428fdda307e171db7, type: 3}
-  m_Name: ShotgunPistol
+  m_Script: {fileID: 11500000, guid: f1cbb640e716b4140a4e79d73bc7da83, type: 3}
+  m_Name: Pistol
   m_EditorClassIdentifier: 
   hitLayer:
     serializedVersion: 2
@@ -19,10 +19,8 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: 2a78ab9f421e3064eadbd42736aa7177, type: 3}
   weaponPrefab: {fileID: 4524527208965052608, guid: fe6efc4d415f7b344bc7fdde6cc0cad5, type: 3}
   muzzleFlash: {fileID: 311832067853610290, guid: dd9203ad1e01231418784bc91dc4fe19, type: 3}
-  maxAmmo: 30
-  weaponDmg: 3
+  maxAmmo: 40
+  weaponDmg: 20
   weaponDelay: 1
-  weaponReloadTime: 3
-  numberOfBullets: 5
-  ySpray: 0.2
-  xSpray: 0.2
+  weaponReloadTime: 1
+  isAutomaticGun: 0
