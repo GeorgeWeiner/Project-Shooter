@@ -15,11 +15,38 @@ MonoBehaviour:
   Path: ../../Documents/FMOD Studio/venusian_fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637834928597022803
+  lastModified: 637834963211493223
   FileSizes:
   - Name: Desktop
-    Value: 1730
+    Value: 102176
   Exists: 1
+--- !u!114 &-2899545004533901189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GunshotShotgun_BW.58038
+  m_EditorClassIdentifier: 
+  Path: event:/GunshotShotgun_BW.58038
+  Guid:
+    Data1: 399894439
+    Data2: 1239466097
+    Data3: -488169027
+    Data4: 758282852
+  Banks:
+  - {fileID: -4244400580916917920}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,12 +64,13 @@ MonoBehaviour:
   - {fileID: -4244400580916917920}
   EditorEvents:
   - {fileID: 7527892556063819852}
+  - {fileID: -2899545004533901189}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4244400580916917920}
   StringsBanks:
   - {fileID: 7491113492579573903}
-  cacheTime: 637834928597032805
+  cacheTime: 637834963211503222
   cacheVersion: 10
 --- !u!114 &7491113492579573903
 MonoBehaviour:
@@ -59,10 +87,10 @@ MonoBehaviour:
   Path: ../../Documents/FMOD Studio/venusian_fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637834928597032805
+  lastModified: 637834963211503222
   FileSizes:
   - Name: Desktop
-    Value: 762
+    Value: 828
   Exists: 1
 --- !u!114 &7527892556063819852
 MonoBehaviour:
