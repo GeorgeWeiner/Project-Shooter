@@ -554,29 +554,6 @@ Transform:
   m_Father: {fileID: 15496663}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &706137097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706137095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56edcae1c9de42e40b14e47abfc58c2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundAudioClips:
-  - sound: 0
-    audioClip: {fileID: 0}
-  isPlayerControlling: 0
-  isPlayerWalking: 0
-  isPlayerRunning: 0
-  isWallRunning: 0
-  isClimbingLadder: 0
-  playerHead: {x: 0, y: 0, z: 0}
-  playerCollider: {fileID: 1865794785}
-  verticalMovement: 0
 --- !u!1 &788970284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,11 +1253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322558e078c798d458e3239fc5ec1b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &1865794785 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 6336695369560414812, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
-  m_PrefabInstance: {fileID: 1265048137}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6116724592413326864
 PrefabInstance:
   m_ObjectHideFlags: 0
