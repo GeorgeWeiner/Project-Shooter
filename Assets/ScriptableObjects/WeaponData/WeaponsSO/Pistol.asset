@@ -15,6 +15,7 @@ MonoBehaviour:
   hitLayer:
     serializedVersion: 2
     m_Bits: 512
+  ammoTypeOfThisWeapon: 2
   weaponSound: {fileID: 8300000, guid: afd87bd0bf41ca441aa229660e7d0a68, type: 3}
   reloadSound: {fileID: 8300000, guid: 2a78ab9f421e3064eadbd42736aa7177, type: 3}
   weaponPrefab: {fileID: 4524527208965052608, guid: fe6efc4d415f7b344bc7fdde6cc0cad5, type: 3}

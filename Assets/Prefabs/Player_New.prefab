@@ -240,7 +240,6 @@ GameObject:
   - component: {fileID: 6336695369560414808}
   - component: {fileID: 6336695369560414810}
   - component: {fileID: 6336695369560414811}
-  - component: {fileID: 6336695369560414812}
   m_Layer: 10
   m_Name: PlayerCapsule
   m_TagString: Untagged
@@ -314,20 +313,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336695369560414809}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!136 &6336695369560414812
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336695369560414809}
-  m_Material: {fileID: 13400000, guid: dc5efe9e472c53445be62ca17bc90d58, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6336695369966582957
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,15 +322,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6336695369966582953}
-  - component: {fileID: 6336695369966582955}
   - component: {fileID: 3231002473736799045}
   - component: {fileID: 9211908244488930823}
   - component: {fileID: 9211908243418476031}
   - component: {fileID: 9211908243418476024}
   - component: {fileID: 9211908244961220769}
+  - component: {fileID: 6336695369966582955}
+  - component: {fileID: 1140135014128210993}
   m_Layer: 10
   m_Name: Player_New
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,22 +353,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!54 &6336695369966582955
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336695369966582957}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 5
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 1
 --- !u!114 &3231002473736799045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,11 +402,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponHoldPoint: {fileID: 3645765001136025007}
-  weaponPrefabs:
-  - {fileID: 4524527209116707693}
+  weaponPrefabs: []
   weaponsAquired:
   - {fileID: 11400000, guid: d123706a75ac59d4b9529924786fcf10, type: 2}
-  currentWeaponIndex: 0
 --- !u!114 &9211908243418476024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +434,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashlight: {fileID: 9211908243126016757}
   audioSource: {fileID: 7905215286135391390}
+--- !u!54 &6336695369966582955
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336695369966582957}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 112
+  m_CollisionDetection: 1
+--- !u!136 &1140135014128210993
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336695369966582957}
+  m_Material: {fileID: 13400000, guid: dc5efe9e472c53445be62ca17bc90d58, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9211908243126016757
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,14 +971,14 @@ MonoBehaviour:
     sssQualityMode: 0
     sssQualityLevel: 0
     sssCustomSampleBudget: 20
-    msaaMode: 1
+    msaaMode: 9
     materialQuality: 0
   renderingPathCustomFrameSettingsOverrideMask:
     mask:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
-  m_Version: 7
+  m_Version: 8
   m_ObsoleteRenderingPath: 0
   m_ObsoleteFrameSettings:
     overrides: 0
@@ -1218,7 +1216,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7781909, y: 1}
+    m_SensorSize: {x: 1.7770898, y: 1}
     Iso: 200
     ShutterSpeed: 0.005
     Aperture: 16
@@ -1295,11 +1293,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe6efc4d415f7b344bc7fdde6cc0cad5, type: 3}
---- !u!1 &4524527209116707693 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4524527208965052608, guid: fe6efc4d415f7b344bc7fdde6cc0cad5, type: 3}
-  m_PrefabInstance: {fileID: 420361133}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9016329466438589763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9016329466321546990, guid: fe6efc4d415f7b344bc7fdde6cc0cad5, type: 3}
