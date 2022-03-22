@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum AmmoType
+{
+    shotgunAmmo,
+    plasmaGunAmmo,
+    pistolAmmo,
+    rocketLauncherAmmo
+}
 public class Inventory : BaseSingleton<Inventory>
 {
     [SerializeField] Transform weaponHoldPoint;
@@ -12,6 +19,8 @@ public class Inventory : BaseSingleton<Inventory>
     Weapon currentlyEquippedWeapon;
     public Weapon CurrentlyEquippedWeapon { get { return currentlyEquippedWeapon; } set { currentlyEquippedWeapon = value; } }
     Dictionary<Weapon, int> weaponsAmmo = new Dictionary<Weapon, int>();
+    Dictionary<AmmoType, int> weaponCarriedAmmo = new Dictionary<AmmoType, int>();
+    public Dictionary<AmmoType, int> WeaponCarriedAmmo { get { return weaponCarriedAmmo; } set { weaponCarriedAmmo = value; } }
     WeaponInput playerWeapon;
     int currentWeaponIndex;
     protected override void Awake()

@@ -40,7 +40,7 @@ public class WeaponInput : MonoBehaviour
     {
         if (PlayerInput.Reload() && !isReloading)
         {
-            StartCoroutine(ReloadWeapon()); 
+            StartCoroutine(ReloadWeaponProcess()); 
         }
     }
     IEnumerator WeaponDelay()
@@ -49,12 +49,43 @@ public class WeaponInput : MonoBehaviour
         yield return new WaitForSeconds( weaponToFire.WeaponDelay);
         canShoot = true;
     }
-    IEnumerator ReloadWeapon()
+    IEnumerator ReloadWeaponProcess()
     {
-        AudioSource.PlayClipAtPoint(weaponToFire.ReloadSound, weaponTransform.position, 3f);
+
         isReloading = true;
         yield return new WaitForSeconds(weaponToFire.WeaponReloadTime);
-        currentWeaponAmmo = weaponToFire.MaxAmmo;
+        ReloadWeapon();
         isReloading = false;
+    }
+    void ReloadWeapon()
+    {
+        Inventory inventory = Inventory.Instance;
+        for (int i = 0; i < inventory.WeaponCarriedAmmo.Count; i++)
+        {
+            if (inventory.WeaponCarriedAmmo.ContainsKey(inventory.CurrentlyEquippedWeapon.AmmoTypeOfThisWeapon))
+            {
+                if (inventory.WeaponCarriedAmmo[inventory.CurrentlyEquippedWeapon.AmmoTypeOfThisWeapon] > inventory.CurrentlyEquippedWeapon.MaxAmmo)
+                {
+                    int ammoToAdd = inventory.CurrentlyEquippedWeapon.MaxAmmo - currentWeaponAmmo;
+                    if(ammoToAdd <= inventory.WeaponCarriedAmmo[inventory.CurrentlyEquippedWeapon.AmmoTypeOfThisWeapon])
+                    {
+                        inventory.WeaponCarriedAmmo[inventory.CurrentlyEquippedWeapon.AmmoTypeOfThisWeapon] -= ammoToAdd;
+                        currentWeaponAmmo += ammoToAdd;
+                        Debug.Log(inventory.WeaponCarriedAmmo[inventory.CurrentlyEquippedWeapon.AmmoTypeOfThisWeapon]);
+                    }
+                    
+                }
+                else if(inventory.WeaponCarriedAmmo[inventory.CurrentlyEquippedWeapon.AmmoTypeOfThisWeapon] > 0)
+                {
+                    int ammoToAdd = inventory.CurrentlyEquippedWeapon.MaxAmmo - currentWeaponAmmo;
+                    if (ammoToAdd <= inventory.WeaponCarriedAmmo[inventory.CurrentlyEquippedWeapon.AmmoTypeOfThisWeapon])
+                    {
+                        currentWeaponAmmo += ammoToAdd;
+                        inventory.WeaponCarriedAmmo[inventory.CurrentlyEquippedWeapon.AmmoTypeOfThisWeapon] -= ammoToAdd;
+                        Debug.Log(inventory.WeaponCarriedAmmo[inventory.CurrentlyEquippedWeapon.AmmoTypeOfThisWeapon]);
+                    }   
+                }     
+            }   
+        }
     }
 }
