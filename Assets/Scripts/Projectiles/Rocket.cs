@@ -18,7 +18,7 @@ public class Rocket : Projectile
     protected override void GiveProjectileForce()
     {
         rocketForce = Mathf.Lerp(rocketForce, rocketForceMax, t / 10);
-        Debug.Log(rocketForce);
+        //Debug.Log(rocketForce);
         projectileRb.AddForce(transform.forward * rocketForce, ForceMode.Acceleration);
     }
     protected override void ProjectileImpact(Collider other)

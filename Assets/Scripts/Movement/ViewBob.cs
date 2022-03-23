@@ -1,4 +1,5 @@
 using Inputs;
+using TMPro;
 using UnityEngine;
 
 namespace Movement
@@ -9,11 +10,16 @@ namespace Movement
 
         
         [Header("Intensity")]
-        [SerializeField] private float amplitudeWalking = 0.15f;
-        [SerializeField] private float frequencyWalking = 15f;
+        [SerializeField] private float minAmplitude = 0.15f;
+        [SerializeField] private float minFrequency = 15f;
         
-        [SerializeField] private float amplitudeSprinting = 0.3f;
-        [SerializeField] private float frequencySprinting = 25f;
+        [SerializeField] private float maxAmplitude = 0.3f;
+        [SerializeField] private float maxFrequency = 25f;
+
+        [SerializeField] private float resetSpeed = 1f;
+        [SerializeField] private float smoothingStrength;
+
+        [SerializeField] private AnimationCurve intensityCurve;
 
         [Header("Cameras")]
         [SerializeField] private Transform cam;
@@ -25,6 +31,10 @@ namespace Movement
         private Rigidbody _rb;
         private float _amplitude;
         private float _frequency;
+        private float _smoothedIntensity;
+        private Vector3 _smoothedPos;
+        private float _speed;
+        private float _maxSpeed;
         
 
         private void Awake()
@@ -32,6 +42,7 @@ namespace Movement
             _controller = GetComponentInParent<PlayerMovement>();
             _rb = GetComponentInParent<Rigidbody>();
             _startPos = cam.localPosition;
+            
         }
 
         private void Update()
@@ -39,7 +50,7 @@ namespace Movement
             if (!enable) return;
             
             CheckMotion();
-            ResetPosition();
+            //ResetPosition();
             ControlIntensity();
             cam.LookAt(FocusTarget());
         }
@@ -47,9 +58,9 @@ namespace Movement
         private void CheckMotion()
         {
             var velocity = _rb.velocity;
-            var speed = new Vector3(velocity.x, 0, velocity.z).magnitude;
+            _speed = new Vector3(velocity.x, 0, velocity.z).magnitude;
 
-            if (speed < ToggleSpeed) return;
+            //if (_speed < ToggleSpeed) return;
             if (!_controller.IsGrounded()) return;
             
             PlayMotion(FootStepMotion());
@@ -64,7 +75,7 @@ namespace Movement
         {
             if (cam.localPosition == _startPos) return;
 
-            cam.localPosition = Vector3.Lerp(cam.localPosition, _startPos, Time.deltaTime);
+            cam.localPosition = Vector3.MoveTowards(cam.localPosition, _startPos, resetSpeed);
         }
 
         private Vector3 FootStepMotion()
@@ -72,8 +83,10 @@ namespace Movement
             var pos = Vector3.zero;
             pos.y += Mathf.Sin(Time.time * _frequency) * _amplitude;
             pos.x += Mathf.Cos(Time.time * _frequency / 2) * _amplitude * 2;
+            
+            _smoothedPos = Vector3.MoveTowards(_smoothedPos, pos, 1f / smoothingStrength * Time.deltaTime);
 
-            return pos;
+            return _smoothedPos;
         }
 
         private Vector3 FocusTarget()
@@ -86,16 +99,11 @@ namespace Movement
 
         private void ControlIntensity()
         {
-            if (PlayerInput.Sprint() && PlayerInput.InputY() != 0f || PlayerInput.Sprint() && PlayerInput.InputX() != 0f)
-            {
-                _amplitude = amplitudeSprinting;
-                _frequency = frequencySprinting;
-            }
-            else
-            {
-                _amplitude = amplitudeWalking;
-                _frequency = frequencyWalking;
-            }
+            var intensity = Mathf.InverseLerp(_controller.MinSpeed, _controller.MaxSpeed, _controller.MovementSpeed());
+            _smoothedIntensity = Mathf.MoveTowards(_smoothedIntensity, intensity, 1 / smoothingStrength);
+
+            _frequency = Mathf.Lerp(0f, maxFrequency, intensityCurve.Evaluate(_smoothedIntensity));
+            _amplitude = Mathf.Lerp(0f, maxAmplitude, intensityCurve.Evaluate(_smoothedIntensity));
         }
     }
 }
