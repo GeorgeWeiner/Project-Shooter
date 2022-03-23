@@ -39,5 +39,6 @@ public abstract class Weapon : ScriptableObject
     public void PlayWeaponEffects(Transform weapon)
     {
         weapon.GetComponentInChildren<StudioEventEmitter>().Play();
+        weapon.GetComponentInChildren<Animation>().Play();
     }
 }
