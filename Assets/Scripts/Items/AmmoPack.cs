@@ -22,9 +22,8 @@ public class AmmoPack : MonoBehaviour ,IInteractable
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.GetComponentInParent<Inventory>() != null)
         {
-            Debug.Log("hello");
             OnInteraction();
             Destroy(gameObject);
         }

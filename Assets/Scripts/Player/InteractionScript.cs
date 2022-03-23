@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractionScript : MonoBehaviour
 {
+    delegate void ReleaseItem();
+    ReleaseItem releaseItem;
     [SerializeField] LayerMask interactableLayer;
     [SerializeField] KeyCode interactionKey;
     [SerializeField] float interactionRange;
@@ -28,14 +31,12 @@ public class InteractionScript : MonoBehaviour
             if(hitInfo.collider.GetComponent<IMoveAble>() != null)
             {
                 hitInfo.collider.GetComponent<IMoveAble>().OnGrab(hitInfo.point,transform);
+                releaseItem = hitInfo.collider.GetComponent<IMoveAble>().OnRelease;
             }  
         }
-        else if (interactableInReach && Input.GetKeyUp(interactionKey))
+        else if ( Input.GetKeyUp(interactionKey) || !interactableInReach)
         {
-            if (hitInfo.collider.GetComponent<IMoveAble>() != null)
-            {
-                hitInfo.collider.GetComponent<IMoveAble>().OnRelease();
-            }      
+            releaseItem?.Invoke();
         }
     }
 }
