@@ -8,7 +8,8 @@ namespace Inputs
     {
         [SerializeField] protected GameEvent gameEvent;
         [SerializeField] protected UnityEvent unityEvent;
-
+        
+        //This component registers itself to the Game-Event Scriptable Object.
         private void Awake()
         {
             gameEvent.Register(this);

@@ -11,6 +11,7 @@ namespace Events
     {
         private HashSet<GameEventListener> _listeners = new HashSet<GameEventListener>();
         
+        //Calls all the listeners in the hashset.
         public void Invoke()
         {
             foreach (var globalEventListener in _listeners)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public abstract class Weapon : ScriptableObject 
@@ -34,5 +35,10 @@ public abstract class Weapon : ScriptableObject
         yield return new WaitForSeconds(0.1f);
         Destroy(tempParticles);
     }
-    
+
+    public void PlayWeaponEffects(Transform weapon)
+    {
+        weapon.GetComponentInChildren<StudioEventEmitter>().Play();
+        weapon.GetComponentInChildren<Animation>().Play();
+    }
 }

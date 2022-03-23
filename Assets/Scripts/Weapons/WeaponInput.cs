@@ -33,6 +33,7 @@ public class WeaponInput : MonoBehaviour
             }
             StartCoroutine(WeaponDelay());
             weaponToFire.FireWeapon(weaponTransform);
+            weaponToFire.PlayWeaponEffects(weaponTransform);
             currentWeaponAmmo -= 1;
         }
     }
