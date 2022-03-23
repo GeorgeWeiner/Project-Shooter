@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2216961108553196235
+--- !u!114 &-4046542928512189020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/New Event
+  m_Name: event:/Shotgun
   m_EditorClassIdentifier: 
-  Path: event:/New Event
+  Path: event:/Shotgun
   Guid:
     Data1: 1593966637
     Data2: 1287330452
@@ -42,16 +42,19 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 7337183659175443394}
   - {fileID: 7249598875251300503}
+  - {fileID: 8541079196814695095}
   EditorEvents:
   - {fileID: 5246860435752691892}
   - {fileID: 1326523204765853395}
-  - {fileID: -2216961108553196235}
+  - {fileID: -4046542928512189020}
+  - {fileID: 5801932533939219469}
+  - {fileID: 8598846242133460443}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7249598875251300503}
   StringsBanks:
   - {fileID: 7337183659175443394}
-  cacheTime: 637835671797713390
+  cacheTime: 637836518237379980
   cacheVersion: 10
 --- !u!114 &1326523204765853395
 MonoBehaviour:
@@ -107,6 +110,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5801932533939219469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/garage-door-open-01_SFX
+  m_EditorClassIdentifier: 
+  Path: event:/garage-door-open-01_SFX
+  Guid:
+    Data1: 305898438
+    Data2: 1113084543
+    Data3: 228884884
+    Data4: 131082391
+  Banks:
+  - {fileID: 7249598875251300503}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 75
+  Length: 0
 --- !u!114 &7249598875251300503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,10 +152,10 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637835671797713390
+  lastModified: 637836518237079923
   FileSizes:
   - Name: Desktop
-    Value: 4522
+    Value: 122496
   Exists: 1
 --- !u!114 &7337183659175443394
 MonoBehaviour:
@@ -142,8 +172,55 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637835671797643383
+  lastModified: 637836518237109928
   FileSizes:
   - Name: Desktop
-    Value: 850
+    Value: 1024
   Exists: 1
+--- !u!114 &8541079196814695095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 637836518237379980
+  FileSizes:
+  - Name: Desktop
+    Value: 289600
+  Exists: 1
+--- !u!114 &8598846242133460443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Apprehension - Half Life OST
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Apprehension - Half Life OST
+  Guid:
+    Data1: -975719433
+    Data2: 1129981701
+    Data3: -867389249
+    Data4: -1957505983
+  Banks:
+  - {fileID: 8541079196814695095}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

@@ -24,17 +24,20 @@ namespace Movement
         [Header("Cameras")]
         [SerializeField] private Transform cam;
         [SerializeField] private Transform cameraHolder;
-
-        private const float ToggleSpeed = 3f;
-        private Vector3 _startPos;
-        private PlayerMovement _controller;
-        private Rigidbody _rb;
+        
         private float _amplitude;
         private float _frequency;
         private float _smoothedIntensity;
-        private Vector3 _smoothedPos;
         private float _speed;
         private float _maxSpeed;
+        private const float ToggleSpeed = 3f;
+        
+        private Vector3 _startPos;
+        private Vector3 _smoothedPos;
+        
+        private PlayerMovement _controller;
+        
+        private Rigidbody _rb;
         
 
         private void Awake()
