@@ -18,7 +18,24 @@ public class InteractionScript : MonoBehaviour
         bool interactableInReach = Physics.Raycast(ray, out hitInfo, interactionRange, interactableLayer);
         if (interactableInReach && Input.GetKeyDown(interactionKey))
         {
-            hitInfo.collider.gameObject.GetComponent<IInteractable>().OnInteraction();
+            if(hitInfo.collider.GetComponent<IInteractable>() != null)
+            {
+                hitInfo.collider.gameObject.GetComponent<IInteractable>().OnInteraction();
+            }
+        }
+        if (interactableInReach && Input.GetKey(interactionKey))
+        {
+            if(hitInfo.collider.GetComponent<IMoveAble>() != null)
+            {
+                hitInfo.collider.GetComponent<IMoveAble>().OnGrab(hitInfo.point,transform);
+            }  
+        }
+        else if (interactableInReach && Input.GetKeyUp(interactionKey))
+        {
+            if (hitInfo.collider.GetComponent<IMoveAble>() != null)
+            {
+                hitInfo.collider.GetComponent<IMoveAble>().OnRelease();
+            }      
         }
     }
 }
