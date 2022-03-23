@@ -15,16 +15,20 @@ namespace Movement
         [SerializeField] private float gravityAcceleration = 50f;
         
         [SerializeField] private LayerMask groundLayer;
-        
-        [Header("Crouching")]
-        [SerializeField] private Vector3 crouchScale;
-        [SerializeField] private float crouchSpeed;
+
+        [Header("Crouching")] 
+        [SerializeField] private Vector3 crouchScale = new(1.5f, 1f, 1.5f);
+        [SerializeField] private float crouchMovementSpeed = 60f;
+        [SerializeField] private float crouchStateSpeed = 6f;
         
         private Vector3 _normalScale;
         private float _crouchScaleDifference;
         private Rigidbody _rb;
         private CapsuleCollider _col;
         private PlayerLook _playerLook;
+        
+        public float MaxSpeed => sprintSpeed;
+        public float MinSpeed => crouchMovementSpeed;
 
         private void Awake()
         {
@@ -49,7 +53,8 @@ namespace Movement
 
         private void MovePlayer()
         {
-            var directionHorizontal = _playerLook.transform.forward * PlayerInput.InputY() + _playerLook.transform.right * PlayerInput.InputX();
+            var playerLookDirection = _playerLook.transform.forward * PlayerInput.InputY() + _playerLook.transform.right * PlayerInput.InputX();
+            var directionHorizontal = new Vector3(playerLookDirection.x, 0f, playerLookDirection.z);
             var projectOnPlane = Vector3.ProjectOnPlane(directionHorizontal, GroundInfo().normal);
 
             _rb.AddForce(projectOnPlane.normalized * MovementSpeed() * Time.fixedDeltaTime * 100f, ForceMode.Acceleration);
@@ -58,7 +63,7 @@ namespace Movement
 
         private void Jump()
         {
-            if (IsGrounded() && PlayerInput.Jump())
+            if (IsGrounded() && PlayerInput.Jump() && CanStandUp())
             {
                 var velocity = _rb.velocity;
                 velocity = new Vector3(velocity.x, 0f, velocity.z);
@@ -76,8 +81,9 @@ namespace Movement
             }
         }
 
-        private float MovementSpeed()
+        public float MovementSpeed()
         {
+            if (PlayerInput.Crouch() || !CanStandUp()) return crouchMovementSpeed;
             return PlayerInput.Sprint() ? sprintSpeed : walkSpeed;
         }
 
@@ -114,14 +120,19 @@ namespace Movement
         private void Crouch()
         {
             Vector3 localScale;
-            print(CanStandUp());
-            
+
             if (!PlayerInput.Crouch() && CanStandUp())
+            {
                 localScale = _normalScale;
+                distanceToGround = 1f;
+            }
             else
+            {
                 localScale = crouchScale;
+                distanceToGround = 0.5f;
+            }
             
-            _col.transform.localScale = Vector3.MoveTowards(_col.transform.localScale, localScale, crouchSpeed * Time.deltaTime);
+            _col.transform.localScale = Vector3.MoveTowards(_col.transform.localScale, localScale, crouchStateSpeed * Time.deltaTime);
         }
 
         private bool CanStandUp()
