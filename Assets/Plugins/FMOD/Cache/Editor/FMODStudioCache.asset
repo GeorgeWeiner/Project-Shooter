@@ -25,8 +25,8 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  MaxDistance: 5200
+  Length: 1400
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 7249598875251300503}
   StringsBanks:
   - {fileID: 7337183659175443394}
-  cacheTime: 637836518237379980
+  cacheTime: 637836570510942870
   cacheVersion: 10
 --- !u!114 &1326523204765853395
 MonoBehaviour:
@@ -152,10 +152,10 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637836518237079923
+  lastModified: 637836570510652809
   FileSizes:
   - Name: Desktop
-    Value: 122496
+    Value: 229664
   Exists: 1
 --- !u!114 &7337183659175443394
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637836518237109928
+  lastModified: 637836570510672808
   FileSizes:
   - Name: Desktop
     Value: 1024
@@ -192,7 +192,7 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637836518237379980
+  lastModified: 637836570510942870
   FileSizes:
   - Name: Desktop
     Value: 289600

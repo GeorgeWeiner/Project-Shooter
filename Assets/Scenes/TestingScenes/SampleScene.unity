@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.13835405, g: 0.0489899, b: 0.016493995, a: 1}
+  m_IndirectSpecularColor: {r: 0.13834077, g: 0.048985153, b: 0.016496133, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1246,6 +1246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTK_ActionField_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1870210051985476, guid: 0d9cb6e596c5f75449e5bab7d8e35868, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4330548079380302, guid: 0d9cb6e596c5f75449e5bab7d8e35868, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -1483,6 +1487,10 @@ PrefabInstance:
     - target: {fileID: 1060403703027134, guid: 793191320643bf5449da2797043569ca, type: 3}
       propertyPath: m_Name
       value: PTK_ActionField_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060403703027134, guid: 793191320643bf5449da2797043569ca, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4352122999436632, guid: 793191320643bf5449da2797043569ca, type: 3}
       propertyPath: m_RootOrder
@@ -5103,6 +5111,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5397806731972377647, guid: 51ffff961fae04b4e96d204da344cdd5, type: 3}
   m_PrefabInstance: {fileID: 1917448629}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &460568199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460568197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1593966637
+      Data2: 1287330452
+      Data3: 52406683
+      Data4: -768135064
+    Path: event:/Shotgun
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 5200
 --- !u!1 &463005721
 GameObject:
   m_ObjectHideFlags: 0
@@ -6908,6 +6946,7 @@ GameObject:
   - component: {fileID: 641213016}
   - component: {fileID: 641213015}
   - component: {fileID: 641213014}
+  - component: {fileID: 641213017}
   m_Layer: 0
   m_Name: Inside Volume
   m_TagString: Untagged
@@ -6960,6 +6999,29 @@ Transform:
   m_Father: {fileID: 496577635}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &641213017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641213013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0c5e63920ee4f55b7ec5248525af4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftWall: 5
+  rightWall: 5
+  floor: 14
+  ceiling: 15
+  backWall: 4
+  frontWall: 4
+  reflectivity: 1
+  reverbGainDb: 0
+  reverbBrightness: 0
+  reverbTime: 1
+  size: {x: 1, y: 1, z: 1}
 --- !u!1 &648315922
 GameObject:
   m_ObjectHideFlags: 0
@@ -10802,6 +10864,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.39999992, y: 0.39999992, z: 0.39999992}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &995616959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995616954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6489f178d3b30c4c9e46dee490ccf98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1006100926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19349,6 +19423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTK_ActionField_4
       objectReference: {fileID: 0}
+    - target: {fileID: 1203645617596380, guid: 572f193c86d3dae41aa849afe3046580, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4413401972028108, guid: 572f193c86d3dae41aa849afe3046580, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -19416,6 +19494,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4413401972028108, guid: 572f193c86d3dae41aa849afe3046580, type: 3}
   m_PrefabInstance: {fileID: 1701049344}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1701049348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623315865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6489f178d3b30c4c9e46dee490ccf98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1730911166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22938,6 +23028,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.39999992, y: 0.39999992, z: 0.39999992}
   m_Center: {x: 0, y: 0.00000047683716, z: -0.00000047683716}
+--- !u!114 &2052870958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052870953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6489f178d3b30c4c9e46dee490ccf98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2055342290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24584,6 +24686,14 @@ PrefabInstance:
       propertyPath: m_RenderingPathCustomFrameSettings.msaaMode
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 9211908243868701408, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211908244364575995, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9211908244578838094, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.0000038146973
@@ -24596,5 +24706,6 @@ PrefabInstance:
       propertyPath: m_Lens.m_SensorSize.x
       value: 2.381579
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9211908243868701408, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
