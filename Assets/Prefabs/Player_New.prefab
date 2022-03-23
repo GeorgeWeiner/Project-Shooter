@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 9211908243418476031}
   - component: {fileID: 9211908243418476024}
   - component: {fileID: 9211908244961220769}
+  - component: {fileID: 2927752437805437549}
   - component: {fileID: 6336695369966582955}
   m_Layer: 10
   m_Name: Player_New
@@ -437,6 +438,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashlight: {fileID: 9211908243126016757}
   audioSource: {fileID: 7905215286135391390}
+--- !u!114 &2927752437805437549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336695369966582957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec5df54852f5a24d970c0727672e6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  interactionKey: 101
+  interactionRange: 10
 --- !u!54 &6336695369966582955
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1222,7 +1240,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7770898, y: 1}
+    m_SensorSize: {x: 1.7773722, y: 1}
     Iso: 200
     ShutterSpeed: 0.005
     Aperture: 16
