@@ -9,13 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 160206047980615561}
+  - component: {fileID: 460568200}
+  - component: {fileID: 460568199}
   m_Layer: 0
   m_Name: Sci-fi Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &160206047980615561
 Transform:
   m_ObjectHideFlags: 0
@@ -25,12 +27,60 @@ Transform:
   m_GameObject: {fileID: 5397806731972377647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.66}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6419132889021786740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &460568200
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397806731972377647}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 02f147b698dfb524d9bf0328f09f3954, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 02f147b698dfb524d9bf0328f09f3954, type: 2}
+  - {fileID: 7400000, guid: b909765ae1afcde4ca5eb3f9c9986f80, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &460568199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397806731972377647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1593966637
+      Data2: 1287330452
+      Data3: 52406683
+      Data4: -768135064
+    Path: event:/Shotgun
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 5200
 --- !u!1001 &2049106583521198446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -110,6 +160,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4ef949d64b09f134ab7936bb231f1d8b, type: 2}
+    - target: {fileID: 3109828417752492248, guid: 185d69c17cc491542ad5fbfbdeeeb1a6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01294457
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 185d69c17cc491542ad5fbfbdeeeb1a6, type: 3}
 --- !u!4 &6419132889021786740 stripped

@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using Inputs;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace Player
     public class FlashlightController : MonoBehaviour
     {
         [SerializeField] private GameObject flashlight;
-        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private StudioEventEmitter audioSource;
     
         private bool _flashLightToggled;
 
@@ -22,7 +23,7 @@ namespace Player
             _flashLightToggled = !_flashLightToggled;
             flashlight.SetActive(_flashLightToggled);
             
-            audioSource.PlayOneShot(audioSource.clip);
+            audioSource.Play();
         }
     }
 }
