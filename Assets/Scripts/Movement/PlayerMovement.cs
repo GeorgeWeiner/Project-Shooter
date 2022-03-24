@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Movement
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour,ISaveAble
     {
         [SerializeField] private float walkSpeed = 150f;
         [SerializeField] private float sprintSpeed = 230f;
@@ -37,7 +37,10 @@ namespace Movement
             _playerLook = GetComponentInChildren<PlayerLook>();
             _normalScale = _col.transform.localScale;
         }
-
+        private void Start()
+        {
+            AddToSaveManager();
+        }
         private void Update()
         {
             Jump();
@@ -139,6 +142,11 @@ namespace Movement
         {
             var myTransform = transform;
             return !Physics.Raycast(myTransform.position, myTransform.up, 3f);
+        }
+
+        public void AddToSaveManager()
+        {
+            SaveManager.Instance.SaveAbles.Add(this.gameObject);
         }
     }
 }
