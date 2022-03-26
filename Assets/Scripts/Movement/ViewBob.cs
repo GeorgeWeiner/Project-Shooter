@@ -86,10 +86,7 @@ namespace Movement
             var pos = Vector3.zero;
             pos.y += Mathf.Sin(Time.time * _frequency) * _amplitude;
             pos.x += Mathf.Cos(Time.time * _frequency / 2) * _amplitude * 2;
-            
-            _smoothedPos = Vector3.MoveTowards(_smoothedPos, pos, 1f / smoothingStrength * Time.deltaTime);
-
-            return _smoothedPos;
+            return pos;
         }
 
         private Vector3 FocusTarget()
