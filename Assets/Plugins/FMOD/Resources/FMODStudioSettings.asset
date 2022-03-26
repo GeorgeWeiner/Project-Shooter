@@ -490,6 +490,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Ambient
+  - Footsteps
   - Items
   - Music
   BanksToLoad: []
