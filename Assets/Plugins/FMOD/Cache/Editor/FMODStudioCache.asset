@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Items.bank
   Name: Items
   StudioPath: bank:/Items
-  lastModified: 637837173077497151
+  lastModified: 637838490881846538
   FileSizes:
   - Name: Desktop
     Value: 3360
@@ -64,6 +64,7 @@ MonoBehaviour:
   - {fileID: 7249598875251300503}
   - {fileID: 8541079196814695095}
   - {fileID: -4635379261120756234}
+  - {fileID: 3448766690678560475}
   EditorEvents:
   - {fileID: 5246860435752691892}
   - {fileID: 1326523204765853395}
@@ -71,12 +72,13 @@ MonoBehaviour:
   - {fileID: 5801932533939219469}
   - {fileID: 8598846242133460443}
   - {fileID: 244089196818128932}
+  - {fileID: 3392633506182274596}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7249598875251300503}
   StringsBanks:
   - {fileID: 7337183659175443394}
-  cacheTime: 637837173077497151
+  cacheTime: 637838490882666657
   cacheVersion: 10
 --- !u!114 &244089196818128932
 MonoBehaviour:
@@ -132,6 +134,53 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3392633506182274596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Alarm
+  m_EditorClassIdentifier: 
+  Path: event:/Alarm
+  Guid:
+    Data1: 2043278985
+    Data2: 1195723720
+    Data3: 178281883
+    Data4: 1932714698
+  Banks:
+  - {fileID: 3448766690678560475}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3448766690678560475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambient.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Ambient.bank
+  Name: Ambient
+  StudioPath: bank:/Ambient
+  lastModified: 637838490882666657
+  FileSizes:
+  - Name: Desktop
+    Value: 80992
+  Exists: 1
 --- !u!114 &5246860435752691892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +250,7 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637837173077017052
+  lastModified: 637838490882166545
   FileSizes:
   - Name: Desktop
     Value: 229952
@@ -221,10 +270,10 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637837173077067057
+  lastModified: 637838490882186546
   FileSizes:
   - Name: Desktop
-    Value: 1114
+    Value: 1188
   Exists: 1
 --- !u!114 &8541079196814695095
 MonoBehaviour:
@@ -241,7 +290,7 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637837173077317109
+  lastModified: 637838490882476617
   FileSizes:
   - Name: Desktop
     Value: 289600

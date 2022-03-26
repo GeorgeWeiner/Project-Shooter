@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{74df44dc-5045-4dc1-8785-b86dcf9c4def}">
+		<property name="assetPath">
+			<value>SFM_alarm.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>22.0499992</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>10.960544217687074</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c941756c-a8f7-4b9f-b462-4c2448893b87}</destination>
+		</relationship>
+	</object>
+</objects>

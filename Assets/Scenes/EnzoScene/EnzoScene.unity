@@ -2031,6 +2031,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3645765001136025007, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.213
+      objectReference: {fileID: 0}
     - target: {fileID: 4524527209116707693, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2082,6 +2086,10 @@ PrefabInstance:
     - target: {fileID: 6336695369966582957, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
       propertyPath: m_Name
       value: Player_New ALTER PLAYER UNTEN
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016329466438589763, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 9211908243868701408, guid: 034965fb99c86ec48a7b3a47cce13dbc, type: 3}
       propertyPath: m_Enabled

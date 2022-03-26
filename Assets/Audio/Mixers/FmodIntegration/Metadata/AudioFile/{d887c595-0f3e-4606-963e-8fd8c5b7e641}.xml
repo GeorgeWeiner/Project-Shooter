@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d887c595-0f3e-4606-963e-8fd8c5b7e641}">
+		<property name="assetPath">
+			<value>SFM_Ambient.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>47.439999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c941756c-a8f7-4b9f-b462-4c2448893b87}</destination>
+		</relationship>
+	</object>
+</objects>

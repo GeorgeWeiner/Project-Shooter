@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e6d3c0f0-9406-428e-bd06-ceec39d1337d}">
+		<property name="assetPath">
+			<value>SFM_sparkle.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.1700453514739229</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c941756c-a8f7-4b9f-b462-4c2448893b87}</destination>
+		</relationship>
+	</object>
+</objects>

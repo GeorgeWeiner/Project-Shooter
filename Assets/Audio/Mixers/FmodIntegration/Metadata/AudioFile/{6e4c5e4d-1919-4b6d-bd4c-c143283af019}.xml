@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6e4c5e4d-1919-4b6d-bd4c-c143283af019}">
+		<property name="assetPath">
+			<value>SFM_SecurityCam_Beep.WAV</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.7599319727891156</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c941756c-a8f7-4b9f-b462-4c2448893b87}</destination>
+		</relationship>
+	</object>
+</objects>

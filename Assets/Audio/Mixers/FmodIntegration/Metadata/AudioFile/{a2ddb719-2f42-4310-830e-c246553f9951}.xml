@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a2ddb719-2f42-4310-830e-c246553f9951}">
+		<property name="assetPath">
+			<value>SFM_Helmet_On.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.5631519274376418</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c941756c-a8f7-4b9f-b462-4c2448893b87}</destination>
+		</relationship>
+	</object>
+</objects>
