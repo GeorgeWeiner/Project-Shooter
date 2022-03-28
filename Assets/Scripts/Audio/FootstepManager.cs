@@ -10,6 +10,8 @@ namespace Audio
         [SerializeField] private float minFootstepVelocity;
         [SerializeField] private EventReference footstepWalking;
         [SerializeField] private EventReference footstepRunning;
+        [SerializeField] private EventReference footstepJumping;
+        [SerializeField] private EventReference footstepLanding;
     
         private PlayerMovement _playerMovement;
         private Rigidbody _rb;
@@ -38,6 +40,17 @@ namespace Audio
         private void ChangeFootstepSound()
         {
             _emitter.EventReference = PlayerInput.Sprint() ? footstepRunning : footstepWalking;
+            
+            //if (PlayerInput.Jump() && _playerMovement.IsGrounded())
+            //{
+            //    _emitter.EventReference = footstepJumping;
+            //}
+            //
+            //if (!_playerMovement.IsGrounded())
+            //{
+            //    if (_playerMovement.IsGrounded())
+            //        _emitter.EventReference = footstepLanding;
+            //}
         }
     }
 }
