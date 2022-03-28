@@ -1,3 +1,4 @@
+using System;
 using Inputs;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ namespace Weapons
       
       private Vector3 _initialPosition;
 
-      private void Start()
+      private void Awake()
       {
          _initialPosition = transform.localPosition;
       }

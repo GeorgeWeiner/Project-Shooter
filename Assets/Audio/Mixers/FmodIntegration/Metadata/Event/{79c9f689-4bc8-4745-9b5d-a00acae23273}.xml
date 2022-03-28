@@ -5,7 +5,7 @@
 			<value>Alarm</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{866bbe1e-001d-4c69-a6f7-bd2f79304bda}</destination>
@@ -62,7 +62,11 @@
 			<destination>{acaaecbc-21a9-41cf-b2b8-7c11eb92ca15}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{54448b99-5ad0-4904-86d3-72b97465a5f5}" />
+	<object class="EventAutomatableProperties" id="{54448b99-5ad0-4904-86d3-72b97465a5f5}">
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{61fe9cae-66b2-4101-baf8-1e9ad4fe01f0}" />
 	<object class="GroupTrack" id="{438f35c3-e60f-49ef-a690-c9e9bc0cd69e}">
 		<relationship name="mixerGroup">
@@ -80,6 +84,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{efeeb89b-963f-41c7-abf8-9c715677a9a3}">
+		<property name="volume">
+			<value>-6.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{bb971771-c8cd-4c10-a5a4-d710d35690f6}</destination>
 		</relationship>
@@ -95,7 +102,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="sounds">
-			<destination>{d13dc412-df38-4224-abe6-1da0c94d1ec3}</destination>
+			<destination>{217ac2ae-f78f-466a-9a73-45a7eb988c33}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{d2c4638d-1459-4616-b552-4e8f460a15b4}">
@@ -120,13 +127,20 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{bb971771-c8cd-4c10-a5a4-d710d35690f6}">
 		<relationship name="effects">
+			<destination>{e939e090-06a5-4db8-9964-90def9a15e37}</destination>
 			<destination>{94c9e985-953b-40d3-8df5-820040d8239a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9347fce0-c27a-4581-97d2-1467540aca6c}" />
-	<object class="SingleSound" id="{d13dc412-df38-4224-abe6-1da0c94d1ec3}">
+	<object class="SingleSound" id="{217ac2ae-f78f-466a-9a73-45a7eb988c33}">
+		<property name="name">
+			<value>Alarm_Sound</value>
+		</property>
+		<property name="looping">
+			<value>true</value>
+		</property>
 		<relationship name="audioFile">
-			<destination>{74df44dc-5045-4dc1-8785-b86dcf9c4def}</destination>
+			<destination>{5dbf8637-667d-4ccf-875f-d535a8f0850c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{f637194b-6576-481c-b746-32f0aecd68a2}" />
@@ -136,6 +150,23 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7d582a93-7c61-484e-b383-73d15f658e25}" />
+	<object class="SpatialiserEffect" id="{e939e090-06a5-4db8-9964-90def9a15e37}">
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>80</value>
+		</property>
+		<property name="minimumExtent">
+			<value>256</value>
+		</property>
+		<property name="userStereoSeparation">
+			<value>90</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{94c9e985-953b-40d3-8df5-820040d8239a}" />
 	<object class="MixerBusFader" id="{ab441354-d455-444b-a672-b21f7b1207ab}" />
 </objects>

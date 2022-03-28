@@ -30,15 +30,17 @@ public abstract class Weapon : ScriptableObject
     public abstract void FireWeapon(Transform weaponFirePoint);
     public IEnumerator MuzzleFlashSpawn(Transform muzzleFlashPosition)
     {
-        var tempParticles = Instantiate(muzzleFlash, muzzleFlashPosition.forward, muzzleFlashPosition.rotation);
-        tempParticles.transform.position = muzzleFlashPosition.position + muzzleFlashPosition.forward ;
-        yield return new WaitForSeconds(0.1f);
-        Destroy(tempParticles);
+        //var tempParticles = Instantiate(muzzleFlash, muzzleFlashPosition.forward, muzzleFlashPosition.rotation);
+        //tempParticles.transform.position = muzzleFlashPosition.position + muzzleFlashPosition.forward ;
+        //yield return new WaitForSeconds(0.1f);
+        //Destroy(tempParticles);
+        yield return null;
     }
 
     public void PlayWeaponEffects(Transform weapon)
     {
         weapon.GetComponentInChildren<StudioEventEmitter>().Play();
         weapon.GetComponentInChildren<Animation>().Play();
+        weapon.GetComponentInChildren<ParticleSystem>().Play();
     }
 }

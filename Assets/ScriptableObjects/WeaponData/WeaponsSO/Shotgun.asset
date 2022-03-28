@@ -15,10 +15,11 @@ MonoBehaviour:
   hitLayer:
     serializedVersion: 2
     m_Bits: 512
+  ammoTypeOfThisWeapon: 0
   weaponSound: {fileID: 8300000, guid: afd87bd0bf41ca441aa229660e7d0a68, type: 3}
   reloadSound: {fileID: 8300000, guid: 2a78ab9f421e3064eadbd42736aa7177, type: 3}
   weaponPrefab: {fileID: 5397806731972377647, guid: 51ffff961fae04b4e96d204da344cdd5, type: 3}
-  muzzleFlash: {fileID: 311832067853610290, guid: dd9203ad1e01231418784bc91dc4fe19, type: 3}
+  muzzleFlash: {fileID: 8422775121427426856, guid: 7b4a7f88228772e4eb67bb216066232c, type: 3}
   maxAmmo: 30
   weaponDmg: 3
   weaponDelay: 1

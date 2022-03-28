@@ -9,7 +9,7 @@ namespace Movement
         [SerializeField] private float walkSpeed = 150f;
         [SerializeField] private float sprintSpeed = 230f;
         [SerializeField] private float jumpForce = 10f;
-        [SerializeField] private float distanceToGround = 1f;
+        [SerializeField] private float distanceToGround = .5f;
         [SerializeField] private float maxDistanceGroundInfo = 5f;
         [SerializeField] private float gravityStrength;
         [SerializeField] private float gravityAcceleration = 50f;
@@ -20,6 +20,7 @@ namespace Movement
         [SerializeField] private Vector3 crouchScale = new(1.5f, 1f, 1.5f);
         [SerializeField] private float crouchMovementSpeed = 60f;
         [SerializeField] private float crouchStateSpeed = 6f;
+        [SerializeField] private float maxHeadToCeilingDistance = 1f;
         
         private Vector3 _normalScale;
         private float _crouchScaleDifference;
@@ -127,12 +128,12 @@ namespace Movement
             if (!PlayerInput.Crouch() && CanStandUp())
             {
                 localScale = _normalScale;
-                distanceToGround = 1f;
+                distanceToGround = .5f;
             }
             else
             {
                 localScale = crouchScale;
-                distanceToGround = 0.5f;
+                distanceToGround = .25f;
             }
             
             _col.transform.localScale = Vector3.MoveTowards(_col.transform.localScale, localScale, crouchStateSpeed * Time.deltaTime);
@@ -141,7 +142,7 @@ namespace Movement
         private bool CanStandUp()
         {
             var myTransform = transform;
-            return !Physics.Raycast(myTransform.position, myTransform.up, 3f);
+            return !Physics.Raycast(myTransform.position, myTransform.up, maxHeadToCeilingDistance);
         }
 
         public void AddToSaveManager()

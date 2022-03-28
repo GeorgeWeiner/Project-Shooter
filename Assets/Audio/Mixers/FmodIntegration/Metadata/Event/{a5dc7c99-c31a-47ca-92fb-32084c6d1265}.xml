@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{a5dc7c99-c31a-47ca-92fb-32084c6d1265}">
 		<property name="name">
-			<value>Footsteps</value>
+			<value>Footsteps_Walking</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -62,7 +62,14 @@
 			<destination>{acaaecbc-21a9-41cf-b2b8-7c11eb92ca15}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{c3764733-a475-42e4-a737-466c8209dbd6}" />
+	<object class="EventAutomatableProperties" id="{c3764733-a475-42e4-a737-466c8209dbd6}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>460</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{d121192d-dc83-4a1e-a4c8-4326c807c2d7}" />
 	<object class="GroupTrack" id="{c3800c03-906f-4c73-b7be-d3fc67340693}">
 		<relationship name="mixerGroup">
@@ -80,6 +87,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{9726f5a4-804b-4810-a567-ffa2c0128370}">
+		<property name="volume">
+			<value>-5.5</value>
+		</property>
+		<property name="pitch">
+			<value>3.60000014</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{10c3e6c3-998a-4254-a9ce-d4b248df90f9}</destination>
 		</relationship>
@@ -121,7 +134,14 @@
 			<destination>{36f89f2e-ce67-422d-8585-e10aa98ea576}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{9a0bb99a-1d4d-49cd-b6ff-8d4c19d7813d}" />
+	<object class="MixerBusPanner" id="{9a0bb99a-1d4d-49cd-b6ff-8d4c19d7813d}">
+		<property name="surroundPanDirection">
+			<value>-180</value>
+		</property>
+		<property name="surroundPanExtent">
+			<value>149.600159</value>
+		</property>
+	</object>
 	<object class="MultiSound" id="{37297874-0ed6-4b55-9bb7-d514a2ffe60c}">
 		<relationship name="sounds">
 			<destination>{00ce99a5-798f-4abc-87e0-379e7478131b}</destination>

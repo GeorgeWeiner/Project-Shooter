@@ -13,12 +13,10 @@ public class WeaponInput : MonoBehaviour
     bool isReloading = false;
     private void Start()
     {
-        
         currentWeaponAmmo = weaponToFire.MaxAmmo;
     }
     void Update()
     {
-        
         FireCurrentWeapon();
         ReloadCurrentWeapon();
     }

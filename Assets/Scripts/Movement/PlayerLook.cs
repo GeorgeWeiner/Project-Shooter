@@ -17,13 +17,15 @@ namespace Movement
         private void Awake()
         {
             Cursor.lockState = CursorLockMode.Locked;
+            cam.rotation = camAnchor.rotation;
         }
 
         private void Update()
         {
-            UpdatePosition();
             LookAround();
+            UpdatePosition();
         }
+
 
         private void UpdatePosition()
         {
