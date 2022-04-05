@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6967316936442844650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Main Menu Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Main Menu Music
+  Guid:
+    Data1: -695831531
+    Data2: 1278262398
+    Data3: -1035828344
+    Data4: -1448401757
+  Banks:
+  - {fileID: 8541079196814695095}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4635379261120756234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +69,7 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Items.bank
   Name: Items
   StudioPath: bank:/Items
-  lastModified: 637841001742716767
+  lastModified: 637845159183010142
   FileSizes:
   - Name: Desktop
     Value: 3488
@@ -89,7 +116,7 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Footsteps.bank
   Name: Footsteps
   StudioPath: bank:/Footsteps
-  lastModified: 637841001742546726
+  lastModified: 637845159182820110
   FileSizes:
   - Name: Desktop
     Value: 29568
@@ -153,12 +180,13 @@ MonoBehaviour:
   - {fileID: -7010312109486900529}
   - {fileID: 5761450652161489648}
   - {fileID: 6075756034932431256}
+  - {fileID: -6967316936442844650}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7249598875251300503}
   StringsBanks:
   - {fileID: 7337183659175443394}
-  cacheTime: 637841001743482018
+  cacheTime: 637845159183520255
   cacheVersion: 10
 --- !u!114 &244089196818128932
 MonoBehaviour:
@@ -229,7 +257,7 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Environment.bank
   Name: Environment
   StudioPath: bank:/Environment
-  lastModified: 637841001743482018
+  lastModified: 637845159182600049
   FileSizes:
   - Name: Desktop
     Value: 438048
@@ -276,7 +304,7 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 637841001742251609
+  lastModified: 637845159182309984
   FileSizes:
   - Name: Desktop
     Value: 1133504
@@ -404,7 +432,7 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637841001743006837
+  lastModified: 637845159183270201
   FileSizes:
   - Name: Desktop
     Value: 229952
@@ -424,10 +452,10 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637841001743036852
+  lastModified: 637845159183300205
   FileSizes:
   - Name: Desktop
-    Value: 1448
+    Value: 1506
   Exists: 1
 --- !u!114 &8541079196814695095
 MonoBehaviour:
@@ -444,10 +472,10 @@ MonoBehaviour:
   Path: Assets/Audio/Mixers/FmodIntegration/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637841001743256892
+  lastModified: 637845159183520255
   FileSizes:
   - Name: Desktop
-    Value: 289600
+    Value: 2487936
   Exists: 1
 --- !u!114 &8598846242133460443
 MonoBehaviour:

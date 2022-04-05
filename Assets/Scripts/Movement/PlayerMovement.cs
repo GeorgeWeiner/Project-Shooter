@@ -29,7 +29,7 @@ namespace Movement
         private PlayerLook _playerLook;
         
         public float MaxSpeed => sprintSpeed;
-        public float MinSpeed => crouchMovementSpeed;
+        public float MinSpeed => walkSpeed;
 
         private void Awake()
         {

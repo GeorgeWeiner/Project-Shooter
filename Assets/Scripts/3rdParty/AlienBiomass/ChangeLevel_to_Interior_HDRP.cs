@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEngine;
+
+public class ChangeLevel_to_Interior_HDRP : MonoBehaviour
+{
+
+    void Update()
+    {
+        if (Input.GetKeyDown (KeyCode.L))
+        {
+            Application.LoadLevel("Scene_Biomass_Interior_HDRP");
+        }
+    }
+}
